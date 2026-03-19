@@ -125,7 +125,7 @@ export function LobbyPhase() {
         className="px-12 py-5 bg-green-600 hover:bg-green-500 disabled:opacity-30 disabled:cursor-not-allowed text-white rounded-2xl font-display font-bold transition-colors"
         style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)' }}
       >
-        {canStart ? 'Start Game' : `Need ${2 - nonHostCount} more player${nonHostCount === 1 ? '' : 's'}`}
+        Start Game
       </button>
 
       {state.error && (
