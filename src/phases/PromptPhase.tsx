@@ -13,39 +13,43 @@ export function PromptPhase() {
   const submittedCount = round.prompts.length;
 
   return (
-    <div className="flex flex-col items-center justify-center h-full gap-8 animate-fade-in">
-      <div className="text-white/50 text-2xl font-body">
-        Round {state.roundNumber}
-      </div>
-
-      <div className="flex flex-col items-center gap-2">
-        <div className="text-white/60 text-xl font-body">Topic</div>
+    <div className="flex flex-col items-center justify-center h-full gap-6 animate-fade-in px-4">
+      {/* Topic sticker */}
+      <div className="bg-white border-[3px] border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-6 max-w-4xl w-full rotate-[-0.5deg]">
+        <div className="inline-block bg-[#5ef8f8] border-[3px] border-black px-3 py-1 font-black text-xs uppercase mb-3">
+          Round {state.roundNumber}: Fill in the Blank
+        </div>
         <div
-          className="font-display font-bold text-primary-300 text-center max-w-4xl"
-          style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)' }}
+          className="font-black italic uppercase tracking-[-0.05em] text-black leading-tight"
+          style={{ fontSize: 'clamp(1.8rem, 4vw, 3.5rem)' }}
         >
           {round.topic}
         </div>
       </div>
 
-      <div className="flex flex-col items-center gap-1">
-        <div className="text-accent-400 text-xl font-body">Actor</div>
-        <div className="font-display font-bold text-accent-400 text-4xl">
-          {actor?.name ?? 'Unknown'}
-        </div>
+      {/* Actor badge */}
+      <div className="bg-[#ff66b2] border-[3px] border-black px-6 py-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rotate-[1deg]">
+        <span className="font-black uppercase text-sm">Actor: </span>
+        <span className="font-black uppercase text-xl">{actor?.name ?? 'Unknown'}</span>
       </div>
 
       <Timer endTime={round.maxEndAt} label="Time Remaining" />
 
-      <div className="flex flex-col items-center gap-2">
-        <div className="text-white/60 text-xl font-body">Prompts Submitted</div>
-        <div className="font-display font-bold text-5xl text-white">
-          {submittedCount}
-          <span className="text-white/40"> / {nonActorCount}</span>
+      {/* Info boxes row */}
+      <div className="flex flex-wrap justify-center gap-4">
+        <div className="bg-[#5ef8f8] border-[3px] border-black px-6 py-3 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+          <div className="font-black text-xs uppercase text-center">Prompts Submitted</div>
+          <div className="font-black text-3xl text-center">
+            {submittedCount}<span className="text-black/40"> / {nonActorCount}</span>
+          </div>
+        </div>
+        <div className="bg-[#fbfb62] border-[3px] border-black px-6 py-3 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+          <div className="font-black text-xs uppercase text-center">Winner Gets</div>
+          <div className="font-black text-3xl text-center">+50pts</div>
         </div>
       </div>
 
-      <div className="text-white/30 text-lg font-body">
+      <div className="text-black/40 text-lg font-bold">
         Waiting for players to submit prompts on their phones...
       </div>
     </div>

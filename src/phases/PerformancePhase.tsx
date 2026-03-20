@@ -17,32 +17,38 @@ export function PerformancePhase() {
 
   return (
     <div className="flex flex-col items-center justify-center h-full gap-6 px-8 animate-fade-in">
-      <div className="text-accent-400 text-2xl font-body">
-        {prompt.actorName}, perform this:
+      {/* Actor name badge */}
+      <div className="bg-[#5ef8f8] border-[3px] border-black px-6 py-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rotate-[1deg]">
+        <span className="font-black uppercase text-xl">{prompt.actorName}, perform this:</span>
       </div>
 
-      <div
-        className="font-display font-bold text-white text-center max-w-5xl leading-tight"
-        style={{ fontSize: 'clamp(3rem, 7vw, 6rem)' }}
-      >
-        "{prompt.promptText}"
+      {/* The prompt - big and bold */}
+      <div className="bg-white border-[3px] border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-8 max-w-5xl rotate-[-0.5deg]">
+        <div
+          className="font-black italic uppercase tracking-[-0.05em] text-black text-center leading-tight"
+          style={{ fontSize: 'clamp(2.5rem, 6vw, 5rem)' }}
+        >
+          "{prompt.promptText}"
+        </div>
       </div>
 
-      <div className="text-white/40 text-xl font-body">
+      {/* Topic */}
+      <div className="bg-[#fbfb62] border-[3px] border-black px-4 py-1 font-bold text-black/70">
         Topic: {prompt.topic}
       </div>
 
-      <div className="mt-4">
-        <div className="text-white/50 text-lg font-body mb-1 text-center">Time</div>
+      {/* Timer */}
+      <div className="bg-[#5ef8f8] border-[3px] border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] px-8 py-4 rotate-[0.5deg]">
+        <div className="font-black uppercase text-xs text-center mb-1">Time</div>
         <div
-          className="font-display font-bold text-white"
+          className="font-black italic text-black text-center"
           style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}
         >
           {formatted}
         </div>
       </div>
 
-      <div className="text-white/30 text-lg font-body mt-4">
+      <div className="text-black/30 text-lg font-bold mt-2">
         Written by {prompt.playerName} &middot; {prompt.votes} vote{prompt.votes !== 1 ? 's' : ''}
       </div>
     </div>

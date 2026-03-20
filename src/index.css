@@ -7,3 +7,10 @@ html, body, #root {
   margin: 0;
   padding: 0;
 }
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background-color: #f6f6f6;
+  background-image: radial-gradient(#e5e5e5 1px, transparent 1px);
+  background-size: 20px 20px;
+}

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&amp;family=Work+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed": "#fbfb62",
+              "on-secondary": "#bbfffe",
+              "secondary": "#006667",
+              "background": "#f6f6f6",
+              "outline-variant": "#acadad",
+              "tertiary-fixed-dim": "#ecec55",
+              "on-background": "#2d2f2f",
+              "secondary-container": "#5ef8f8",
+              "surface-bright": "#f6f6f6",
+              "on-primary": "#ffeff3",
+              "surface-tint": "#aa1e6d",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-high": "#e1e3e3",
+              "on-secondary-container": "#005c5c",
+              "tertiary-container": "#fbfb62",
+              "on-secondary-fixed-variant": "#006667",
+              "on-tertiary": "#fafa61",
+              "on-secondary-fixed": "#004747",
+              "on-error-container": "#510017",
+              "on-primary-fixed-variant": "#5b0037",
+              "on-primary-fixed": "#000000",
+              "secondary-fixed": "#5ef8f8",
+              "tertiary": "#5f5f00",
+              "surface": "#f6f6f6",
+              "on-surface-variant": "#5a5c5c",
+              "primary-fixed": "#ff6cb4",
+              "error": "#b41340",
+              "primary-dim": "#9a0a61",
+              "tertiary-dim": "#525200",
+              "surface-container-low": "#f0f1f1",
+              "on-surface": "#2d2f2f",
+              "surface-variant": "#dbdddd",
+              "surface-dim": "#d2d5d5",
+              "primary": "#aa1e6d",
+              "on-tertiary-fixed-variant": "#6a6a00",
+              "inverse-on-surface": "#9c9d9d",
+              "primary-container": "#ff6cb4",
+              "on-tertiary-fixed": "#4c4c00",
+              "on-tertiary-container": "#5f5f00",
+              "surface-container-highest": "#dbdddd",
+              "secondary-fixed-dim": "#4beaea",
+              "error-dim": "#a70138",
+              "inverse-surface": "#0c0f0f",
+              "secondary-dim": "#005959",
+              "error-container": "#f74b6d",
+              "surface-container": "#e7e8e8",
+              "on-primary-container": "#4a002c",
+              "on-error": "#ffefef",
+              "primary-fixed-dim": "#f25ca7",
+              "inverse-primary": "#ff66b2",
+              "outline": "#757777"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Work Sans"],
+              "label": ["Work Sans"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neographic-pattern {
+            background-image: radial-gradient(circle at 2px 2px, #dbdddd 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+        .text-shadow-hard {
+            text-shadow: 6px 6px 0px #000000;
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-background neographic-pattern min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full border-b-[3px] border-black bg-cyan-500 z-50 flex justify-between items-center px-6 h-20 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+<div class="text-3xl font-black italic tracking-tighter text-black font-headline uppercase">
+            PROMPT PARTY
+        </div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-headline uppercase tracking-tighter font-black text-black/80 hover:skew-x-1 hover:translate-y-[-2px] transition-transform" href="#">Games</a>
+<a class="font-headline uppercase tracking-tighter font-black text-black/80 hover:skew-x-1 hover:translate-y-[-2px] transition-transform" href="#">Leaderboard</a>
+<a class="font-headline uppercase tracking-tighter font-black text-white underline decoration-[3px] underline-offset-4 hover:skew-x-1 hover:translate-y-[-2px] transition-transform" href="#">Host</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-black text-3xl font-bold hover:scale-110 transition-transform" data-icon="celebration">celebration</button>
+<button class="material-symbols-outlined text-black text-3xl font-bold hover:scale-110 transition-transform" data-icon="settings">settings</button>
+<div class="w-10 h-10 border-2 border-black bg-primary-container overflow-hidden">
+<img alt="User avatar" class="w-full h-full object-cover" data-alt="Cartoon avatar of the game host" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFHp54Dspc0KCo5_9k1GxeEgJapdryLbbZJaviuetoSh0AOTEehqCm-xHVXeKxVAq23eT-JWMmNadJ9qwoAnmhBBFaTowAgJW6PCzUsq9y8bBDQBGBqPyJx6DniXJ7ojZI3-Amqa3aK-_b9BTlyjDskWqDbtrzmsyUfOsMNzOcqm1J5oi_YlxCh0fNYvmT36aeTiyibp4Z_Jg48vN06aT6lQmJ9PVMxHXULRmTJWBMLGZ2Tif4lUkyierjDpmCVvSo0Oph1DUnSCUc"/>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-28 pb-32 px-6 max-w-7xl mx-auto w-full flex flex-col items-center">
+<!-- Hero Header Area -->
+<div class="w-full text-center mb-12 relative">
+<div class="absolute -top-10 -left-10 w-24 h-24 bg-secondary rotate-12 border-[3px] border-black -z-10"></div>
+<div class="absolute top-0 -right-4 w-16 h-16 bg-primary-fixed rotate-45 border-[3px] border-black -z-10"></div>
+<h2 class="font-headline font-black text-4xl uppercase tracking-tighter text-black mb-2">Lobby is Open!</h2>
+<div class="bg-tertiary-container border-[3px] border-black inline-block px-12 py-8 rotate-1 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+<p class="font-headline font-bold text-black text-xl mb-1">ROOM CODE</p>
+<h1 class="font-headline font-black text-8xl md:text-9xl tracking-tighter text-yellow-400 text-shadow-hard -rotate-2">XJ92</h1>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 w-full items-start">
+<!-- Left Panel: QR Code -->
+<div class="lg:col-span-4 flex flex-col items-center">
+<div class="bg-surface-container-lowest border-[3px] border-black p-6 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] rotate-[-1deg]">
+<div class="w-48 h-48 bg-white border-2 border-black flex items-center justify-center mb-4">
+<img alt="Join Game QR Code" class="w-40 h-40" data-alt="QR Code for joining the lobby" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFHp54Dspc0KCo5_9k1GxeEgJapdryLbbZJaviuetoSh0AOTEehqCm-xHVXeKxVAq23eT-JWMmNadJ9qwoAnmhBBFaTowAgJW6PCzUsq9y8bBDQBGBqPyJx6DniXJ7ojZI3-Amqa3aK-_b9BTlyjDskWqDbtrzmsyUfOsMNzOcqm1J5oi_YlxCh0fNYvmT36aeTiyibp4Z_Jg48vN06aT6lQmJ9PVMxHXULRmTJWBMLGZ2Tif4lUkyierjDpmCVvSo0Oph1DUnSCUc"/>
+</div>
+<div class="bg-primary text-white font-headline font-black text-center py-2 border-2 border-black uppercase tracking-widest text-lg">
+                        SCAN TO JOIN
+                    </div>
+</div>
+<div class="mt-8 text-center px-4">
+<p class="font-body font-bold text-on-surface-variant">Join at <span class="text-primary underline">promptparty.tv</span></p>
+<p class="font-body text-sm mt-2 text-on-surface-variant/70 italic">Grab your friends and get weird.</p>
+</div>
+</div>
+<!-- Right Panel: Players Grid -->
+<div class="lg:col-span-8">
+<div class="bg-surface-container border-[3px] border-black p-8 relative min-h-[400px]">
+<div class="absolute -top-5 right-10 bg-secondary-container border-[3px] border-black px-4 py-1 font-headline font-black rotate-3">
+                        PLAYERS: 7/12
+                    </div>
+<h3 class="font-headline font-black text-2xl mb-8 border-b-[3px] border-black pb-2 inline-block">THE PARTY GOERS</h3>
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
+<!-- Player 1 -->
+<div class="flex flex-col items-center group">
+<div class="w-20 h-20 rounded-full border-[3px] border-black bg-pink-300 overflow-hidden shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] group-hover:-translate-y-1 transition-transform">
+<img alt="Felix avatar" class="w-full h-full object-cover" data-alt="Cartoon avatar of player Felix" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFHp54Dspc0KCo5_9k1GxeEgJapdryLbbZJaviuetoSh0AOTEehqCm-xHVXeKxVAq23eT-JWMmNadJ9qwoAnmhBBFaTowAgJW6PCzUsq9y8bBDQBGBqPyJx6DniXJ7ojZI3-Amqa3aK-_b9BTlyjDskWqDbtrzmsyUfOsMNzOcqm1J5oi_YlxCh0fNYvmT36aeTiyibp4Z_Jg48vN06aT6lQmJ9PVMxHXULRmTJWBMLGZ2Tif4lUkyierjDpmCVvSo0Oph1DUnSCUc"/>
+</div>
+<span class="mt-2 bg-black text-white px-3 py-1 font-headline font-bold text-sm -rotate-1">FELIX</span>
+</div>
+<!-- Player 2 -->
+<div class="flex flex-col items-center group">
+<div class="w-20 h-20 rounded-full border-[3px] border-black bg-cyan-300 overflow-hidden shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] group-hover:-translate-y-1 transition-transform">
+<img alt="Sarah avatar" class="w-full h-full object-cover" data-alt="Cartoon avatar of player Sarah" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFHp54Dspc0KCo5_9k1GxeEgJapdryLbbZJaviuetoSh0AOTEehqCm-xHVXeKxVAq23eT-JWMmNadJ9qwoAnmhBBFaTowAgJW6PCzUsq9y8bBDQBGBqPyJx6DniXJ7ojZI3-Amqa3aK-_b9BTlyjDskWqDbtrzmsyUfOsMNzOcqm1J5oi_YlxCh0fNYvmT36aeTiyibp4Z_Jg48vN06aT6lQmJ9PVMxHXULRmTJWBMLGZ2Tif4lUkyierjDpmCVvSo0Oph1DUnSCUc"/>
+</div>
+<span class="mt-2 bg-black text-white px-3 py-1 font-headline font-bold text-sm rotate-2">QUEEN_B</span>
+</div>
+<!-- Player 3 -->
+<div class="flex flex-col items-center group">
+<div class="w-20 h-20 rounded-full border-[3px] border-black bg-yellow-300 overflow-hidden shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] group-hover:-translate-y-1 transition-transform">
+<img alt="Ziggy avatar" class="w-full h-full object-cover" data-alt="Cartoon avatar of player Ziggy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFHp54Dspc0KCo5_9k1GxeEgJapdryLbbZJaviuetoSh0AOTEehqCm-xHVXeKxVAq23eT-JWMmNadJ9qwoAnmhBBFaTowAgJW6PCzUsq9y8bBDQBGBqPyJx6DniXJ7ojZI3-Amqa3aK-_b9BTlyjDskWqDbtrzmsyUfOsMNzOcqm1J5oi_YlxCh0fNYvmT36aeTiyibp4Z_Jg48vN06aT6lQmJ9PVMxHXULRmTJWBMLGZ2Tif4lUkyierjDpmCVvSo0Oph1DUnSCUc"/>
+</div>
+<span class="mt-2 bg-black text-white px-3 py-1 font-headline font-bold text-sm -rotate-2">ZIGGY</span>
+</div>
+<!-- Player 4 -->
+<div class="flex flex-col items-center group">
+<div class="w-20 h-20 rounded-full border-[3px] border-black bg-primary-container overflow-hidden shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] group-hover:-translate-y-1 transition-transform">
+<img alt="Nico avatar" class="w-full h-full object-cover" data-alt="Cartoon avatar of player Nico" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFHp54Dspc0KCo5_9k1GxeEgJapdryLbbZJaviuetoSh0AOTEehqCm-xHVXeKxVAq23eT-JWMmNadJ9qwoAnmhBBFaTowAgJW6PCzUsq9y8bBDQBGBqPyJx6DniXJ7ojZI3-Amqa3aK-_b9BTlyjDskWqDbtrzmsyUfOsMNzOcqm1J5oi_YlxCh0fNYvmT36aeTiyibp4Z_Jg48vN06aT6lQmJ9PVMxHXULRmTJWBMLGZ2Tif4lUkyierjDpmCVvSo0Oph1DUnSCUc"/>
+</div>
+<span class="mt-2 bg-black text-white px-3 py-1 font-headline font-bold text-sm rotate-1">NICO_V</span>
+</div>
+<!-- Player 5 -->
+<div class="flex flex-col items-center group">
+<div class="w-20 h-20 rounded-full border-[3px] border-black bg-secondary-container overflow-hidden shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] group-hover:-translate-y-1 transition-transform">
+<img alt="Jax avatar" class="w-full h-full object-cover" data-alt="Cartoon avatar of player Jax" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFHp54Dspc0KCo5_9k1GxeEgJapdryLbbZJaviuetoSh0AOTEehqCm-xHVXeKxVAq23eT-JWMmNadJ9qwoAnmhBBFaTowAgJW6PCzUsq9y8bBDQBGBqPyJx6DniXJ7ojZI3-Amqa3aK-_b9BTlyjDskWqDbtrzmsyUfOsMNzOcqm1J5oi_YlxCh0fNYvmT36aeTiyibp4Z_Jg48vN06aT6lQmJ9PVMxHXULRmTJWBMLGZ2Tif4lUkyierjDpmCVvSo0Oph1DUnSCUc"/>
+</div>
+<span class="mt-2 bg-black text-white px-3 py-1 font-headline font-bold text-sm -rotate-3">JAX_ATTACK</span>
+</div>
+<!-- Player 6 -->
+<div class="flex flex-col items-center group">
+<div class="w-20 h-20 rounded-full border-[3px] border-black bg-orange-400 overflow-hidden shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] group-hover:-translate-y-1 transition-transform">
+<img alt="Momo avatar" class="w-full h-full object-cover" data-alt="Cartoon avatar of player Momo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFHp54Dspc0KCo5_9k1GxeEgJapdryLbbZJaviuetoSh0AOTEehqCm-xHVXeKxVAq23eT-JWMmNadJ9qwoAnmhBBFaTowAgJW6PCzUsq9y8bBDQBGBqPyJx6DniXJ7ojZI3-Amqa3aK-_b9BTlyjDskWqDbtrzmsyUfOsMNzOcqm1J5oi_YlxCh0fNYvmT36aeTiyibp4Z_Jg48vN06aT6lQmJ9PVMxHXULRmTJWBMLGZ2Tif4lUkyierjDpmCVvSo0Oph1DUnSCUc"/>
+</div>
+<span class="mt-2 bg-black text-white px-3 py-1 font-headline font-bold text-sm rotate-1">MOMO</span>
+</div>
+<!-- Player 7 -->
+<div class="flex flex-col items-center group">
+<div class="w-20 h-20 rounded-full border-[3px] border-black bg-purple-400 overflow-hidden shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] group-hover:-translate-y-1 transition-transform">
+<img alt="Turbo avatar" class="w-full h-full object-cover" data-alt="Cartoon avatar of player Turbo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFHp54Dspc0KCo5_9k1GxeEgJapdryLbbZJaviuetoSh0AOTEehqCm-xHVXeKxVAq23eT-JWMmNadJ9qwoAnmhBBFaTowAgJW6PCzUsq9y8bBDQBGBqPyJx6DniXJ7ojZI3-Amqa3aK-_b9BTlyjDskWqDbtrzmsyUfOsMNzOcqm1J5oi_YlxCh0fNYvmT36aeTiyibp4Z_Jg48vN06aT6lQmJ9PVMxHXULRmTJWBMLGZ2Tif4lUkyierjDpmCVvSo0Oph1DUnSCUc"/>
+</div>
+<span class="mt-2 bg-black text-white px-3 py-1 font-headline font-bold text-sm rotate-1">TURBO_KID</span>
+</div>
+<!-- Empty slot -->
+<div class="flex flex-col items-center border-2 border-dashed border-black/30 p-4">
+<div class="w-20 h-20 rounded-full bg-surface-container-high border-[3px] border-black flex items-center justify-center opacity-40">
+<span class="material-symbols-outlined text-4xl">person_add</span>
+</div>
+<span class="mt-2 text-on-surface-variant/40 font-headline font-bold text-xs">WAITING...</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Action Bar (Fixed Replacement for standard button for impact) -->
+<div class="fixed bottom-0 left-0 w-full p-8 flex justify-center items-end pointer-events-none">
+<button class="pointer-events-auto bg-[#39ff14] border-[4px] border-black px-12 py-6 flex items-center gap-4 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-4px] hover:translate-y-[-4px] active:translate-x-[0px] active:translate-y-[0px] active:shadow-none transition-all">
+<span class="font-headline font-black text-4xl text-black tracking-tighter uppercase italic">START GAME</span>
+<span class="material-symbols-outlined text-5xl font-black text-black">arrow_forward</span>
+</button>
+</div>
+<!-- Decorative Elements (The "Sticker" Layer) -->
+<div class="fixed top-32 left-10 opacity-20 pointer-events-none select-none">
+<span class="material-symbols-outlined text-9xl text-primary-fixed" style="font-variation-settings: 'FILL' 1;">mood</span>
+</div>
+<div class="fixed bottom-40 right-10 opacity-20 pointer-events-none select-none rotate-12">
+<span class="material-symbols-outlined text-9xl text-secondary-container" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<div class="fixed top-1/2 left-4 w-12 h-12 bg-tertiary-fixed border-[3px] border-black rotate-[22deg] pointer-events-none"></div>
+</body></html>

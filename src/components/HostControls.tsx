@@ -20,14 +20,14 @@ export function HostControls() {
       {canSkip && (
         <button
           onClick={skipPhase}
-          className="px-5 py-2 bg-white/10 hover:bg-white/20 text-white rounded-lg font-display font-medium text-sm backdrop-blur transition-colors"
+          className="px-5 py-2 bg-white text-black border-[3px] border-black font-black uppercase text-sm shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-1px] hover:translate-y-[-1px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-x-[0px] active:translate-y-[0px] active:shadow-none transition-all duration-75"
         >
           Skip
         </button>
       )}
       <button
         onClick={endGame}
-        className="px-5 py-2 bg-red-500/80 hover:bg-red-500 text-white rounded-lg font-display font-medium text-sm backdrop-blur transition-colors"
+        className="px-5 py-2 bg-[#ff66b2] text-black border-[3px] border-black font-black uppercase text-sm shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-1px] hover:translate-y-[-1px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-x-[0px] active:translate-y-[0px] active:shadow-none transition-all duration-75"
       >
         End Game
       </button>

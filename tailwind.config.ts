@@ -5,30 +5,20 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: {
-          50: '#eef2ff',
-          100: '#e0e7ff',
-          200: '#c7d2fe',
-          300: '#a5b4fc',
-          400: '#818cf8',
-          500: '#6366f1',
-          600: '#4f46e5',
-          700: '#4338ca',
-          800: '#3730a3',
-          900: '#312e81',
-        },
-        accent: {
-          400: '#fbbf24',
-          500: '#f59e0b',
+        party: {
+          pink: '#ff66b2',
+          teal: '#5ef8f8',
+          yellow: '#fbfb62',
+          bg: '#f6f6f6',
         },
       },
       fontFamily: {
-        display: ['"Fredoka"', 'system-ui', 'sans-serif'],
-        body: ['system-ui', '-apple-system', 'sans-serif'],
+        display: ['"Space Grotesk"', 'sans-serif'],
+        body: ['"Space Grotesk"', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-out',
-        'slide-up': 'slideUp 0.5s ease-out',
+        'slide-up': 'slideUp 0.5s ease-out both',
         'pulse-slow': 'pulse 3s ease-in-out infinite',
         'scale-in': 'scaleIn 0.3s ease-out',
       },

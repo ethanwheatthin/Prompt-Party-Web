@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PROMPT PARTY - Send It!</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&amp;family=Work+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+        }
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background-color: #f6f6f6;
+            background-image: 
+                radial-gradient(#5ef8f8 2px, transparent 2px),
+                radial-gradient(#fbfb62 2px, transparent 2px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+        .neographic-border {
+            border: 3px solid #000000;
+        }
+        .hard-shadow-pink {
+            shadow: 8px 8px 0px 0px #aa1e6d;
+        }
+        .text-stroke {
+            -webkit-text-stroke: 1px black;
+        }
+        /* Custom Skews for the 'Sticker' feel */
+        .sticker-rotate-1 { transform: rotate(1.5deg); }
+        .sticker-rotate-neg-1 { transform: rotate(-1.2deg); }
+        .sticker-rotate-2 { transform: rotate(2deg); }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-fixed": "#fbfb62",
+                        "on-secondary": "#bbfffe",
+                        "secondary": "#006667",
+                        "background": "#f6f6f6",
+                        "outline-variant": "#acadad",
+                        "tertiary-fixed-dim": "#ecec55",
+                        "on-background": "#2d2f2f",
+                        "secondary-container": "#5ef8f8",
+                        "surface-bright": "#f6f6f6",
+                        "on-primary": "#ffeff3",
+                        "surface-tint": "#aa1e6d",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#e1e3e3",
+                        "on-secondary-container": "#005c5c",
+                        "tertiary-container": "#fbfb62",
+                        "on-secondary-fixed-variant": "#006667",
+                        "on-tertiary": "#fafa61",
+                        "on-secondary-fixed": "#004747",
+                        "on-error-container": "#510017",
+                        "on-primary-fixed-variant": "#5b0037",
+                        "on-primary-fixed": "#000000",
+                        "secondary-fixed": "#5ef8f8",
+                        "tertiary": "#5f5f00",
+                        "surface": "#f6f6f6",
+                        "on-surface-variant": "#5a5c5c",
+                        "primary-fixed": "#ff6cb4",
+                        "error": "#b41340",
+                        "primary-dim": "#9a0a61",
+                        "tertiary-dim": "#525200",
+                        "surface-container-low": "#f0f1f1",
+                        "on-surface": "#2d2f2f",
+                        "surface-variant": "#dbdddd",
+                        "surface-dim": "#d2d5d5",
+                        "primary": "#aa1e6d",
+                        "on-tertiary-fixed-variant": "#6a6a00",
+                        "inverse-on-surface": "#9c9d9d",
+                        "primary-container": "#ff6cb4",
+                        "on-tertiary-fixed": "#4c4c00",
+                        "on-tertiary-container": "#5f5f00",
+                        "surface-container-highest": "#dbdddd",
+                        "secondary-fixed-dim": "#4beaea",
+                        "error-dim": "#a70138",
+                        "inverse-surface": "#0c0f0f",
+                        "secondary-dim": "#005959",
+                        "error-container": "#f74b6d",
+                        "surface-container": "#e7e8e8",
+                        "on-primary-container": "#4a002c",
+                        "on-error": "#ffefef",
+                        "primary-fixed-dim": "#f25ca7",
+                        "inverse-primary": "#ff66b2",
+                        "outline": "#757777"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Work Sans"],
+                        "label": ["Work Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen pb-24">
+<!-- TopNavBar -->
+<nav class="flex justify-between items-center px-6 h-20 w-full z-50 fixed top-0 bg-cyan-500 dark:bg-cyan-700 border-b-[3px] border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+<div class="text-3xl font-black italic tracking-tighter text-black dark:text-white font-['Space_Grotesk'] uppercase">
+            PROMPT PARTY
+        </div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-['Space_Grotesk'] uppercase tracking-tighter font-black text-black/80 dark:text-white/80 hover:skew-x-1 hover:translate-y-[-2px] transition-transform" href="#">Games</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-tighter font-black text-black/80 dark:text-white/80 hover:skew-x-1 hover:translate-y-[-2px] transition-transform" href="#">Leaderboard</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-tighter font-black text-black/80 dark:text-white/80 hover:skew-x-1 hover:translate-y-[-2px] transition-transform" href="#">Host</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-black" data-icon="celebration">celebration</span>
+</button>
+<div class="w-10 h-10 border-2 border-black bg-primary-container overflow-hidden shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+<img class="w-full h-full object-cover" data-alt="User avatar with a neon pink border" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVzEC5mqWDeIxP1WFcY2aqYkPAxRZQMO4rmg2Sri38bwB_zYuej1KCvXrfXzAytpRmtmEs1lRYA1w-3Ut8XO37G9LD95kk0tZx1lKcWWarErvRbZYTlvAHXR8a6cuUDaQnOXZN0dczM33eUK7jx7Z1_VuieEzhqpxU9SPmj138eXP12qmOok7xZIaN0sZZ6F2i_ltjnvKTQzvMlQOqas_b1IFnuzpYJaT1ERXSuNiw5jt_Z8oz-Hia4K3V5idca6sFk1jiUKUUbEdj"/>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-32 px-4 max-w-4xl mx-auto flex flex-col items-center">
+<!-- Animated Background Splatters (Visual Only) -->
+<div class="fixed top-40 left-10 opacity-20 -z-10 pointer-events-none sticker-rotate-neg-1">
+<svg fill="none" height="200" viewbox="0 0 200 200" width="200" xmlns="http://www.w3.org/2000/svg">
+<path d="M50 20C70 10 100 30 110 50C120 70 150 60 160 80C170 100 140 130 130 150C120 170 90 180 70 170C50 160 20 140 30 110C40 80 30 30 50 20Z" fill="#aa1e6d"></path>
+</svg>
+</div>
+<div class="fixed bottom-40 right-10 opacity-20 -z-10 pointer-events-none sticker-rotate-2">
+<svg fill="none" height="250" viewbox="0 0 200 200" width="250" xmlns="http://www.w3.org/2000/svg">
+<path d="M40 50C20 80 60 110 50 140C40 170 80 180 110 170C140 160 180 190 190 150C200 110 160 80 170 50C180 20 130 10 100 20C70 30 60 20 40 50Z" fill="#5ef8f8"></path>
+</svg>
+</div>
+<!-- Prompt Header -->
+<div class="w-full bg-white border-[3px] border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-8 sticker-rotate-neg-1 mb-12">
+<div class="bg-yellow-400 border-[2px] border-black inline-block px-4 py-1 mb-4 font-headline font-black text-black uppercase tracking-tight shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">
+                ROUND 01: FILL IN THE BLANK
+            </div>
+<h1 class="font-headline text-3xl md:text-5xl font-black text-black leading-tight uppercase tracking-tighter">
+                Finish this sentence: The most awkward thing to say on a first date is...
+            </h1>
+</div>
+<!-- Input Area -->
+<div class="w-full space-y-8 sticker-rotate-1">
+<div class="relative">
+<textarea class="w-full h-48 bg-white border-[4px] border-black p-6 font-headline text-2xl font-bold placeholder:text-zinc-400 focus:outline-none focus:bg-tertiary-fixed shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all resize-none" placeholder="TYPE YOUR WEIRDEST ANSWER HERE..."></textarea>
+<div class="absolute -top-4 -right-4 bg-secondary-container border-[3px] border-black px-4 py-2 font-headline font-black text-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                    99 CHARS LEFT
+                </div>
+</div>
+<!-- Submit Button -->
+<div class="flex justify-center md:justify-end">
+<button class="group relative bg-primary-container border-[4px] border-black px-12 py-6 hover:translate-x-[-4px] hover:translate-y-[-4px] active:translate-x-0 active:translate-y-0 transition-transform shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+<div class="flex items-center gap-4">
+<span class="font-headline text-4xl font-black text-black tracking-tighter uppercase italic">SEND IT!</span>
+<span class="material-symbols-outlined text-4xl text-black" data-icon="bolt" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+</button>
+</div>
+</div>
+<!-- Game Info Stickers -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mt-16">
+<div class="bg-secondary-container border-[3px] border-black p-4 sticker-rotate-neg-1 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+<span class="material-symbols-outlined block text-3xl mb-2" data-icon="timer">timer</span>
+<p class="font-headline font-black uppercase text-sm">45 Seconds Left</p>
+</div>
+<div class="bg-tertiary-fixed border-[3px] border-black p-4 sticker-rotate-1 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+<span class="material-symbols-outlined block text-3xl mb-2" data-icon="groups">groups</span>
+<p class="font-headline font-black uppercase text-sm">8 Players Ready</p>
+</div>
+<div class="bg-white border-[3px] border-black p-4 sticker-rotate-neg-1 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+<span class="material-symbols-outlined block text-3xl mb-2" data-icon="emoji_events">emoji_events</span>
+<p class="font-headline font-black uppercase text-sm">Winner gets +50pts</p>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-safe bg-yellow-400 dark:bg-yellow-500 border-t-[3px] border-black h-20 bg-[url('https://www.transparenttextures.com/patterns/p6.png')]">
+<a class="flex flex-col items-center justify-center text-black p-2 hover:scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span class="font-['Space_Grotesk'] text-xs font-black uppercase">Party</span>
+</a>
+<!-- ACTIVE TAB: Vote/Participate -->
+<a class="flex flex-col items-center justify-center bg-pink-500 text-white border-2 border-black rotate-2 p-2 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] scale-110" href="#">
+<span class="material-symbols-outlined" data-icon="how_to_vote" style="font-variation-settings: 'FILL' 1;">how_to_vote</span>
+<span class="font-['Space_Grotesk'] text-xs font-black uppercase">Vote</span>
+</a>
+<a class="flex flex-col items-center justify-center text-black p-2 hover:scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="sentiment_very_satisfied">sentiment_very_satisfied</span>
+<span class="font-['Space_Grotesk'] text-xs font-black uppercase">Laugh</span>
+</a>
+<a class="flex flex-col items-center justify-center text-black p-2 hover:scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="face">face</span>
+<span class="font-['Space_Grotesk'] text-xs font-black uppercase">Me</span>
+</a>
+</nav>
+<!-- Background Decoration: Squiggles and Dots -->
+<div class="fixed top-20 right-20 pointer-events-none -z-10 opacity-40">
+<svg fill="none" height="100" viewbox="0 0 100 100" width="100" xmlns="http://www.w3.org/2000/svg">
+<circle cx="10" cy="10" fill="black" r="5"></circle>
+<circle cx="30" cy="10" fill="black" r="5"></circle>
+<circle cx="50" cy="10" fill="black" r="5"></circle>
+<circle cx="10" cy="30" fill="black" r="5"></circle>
+<circle cx="30" cy="30" fill="black" r="5"></circle>
+<circle cx="50" cy="30" fill="black" r="5"></circle>
+</svg>
+</div>
+<div class="fixed bottom-32 left-8 pointer-events-none -z-10 opacity-30 sticker-rotate-neg-1">
+<svg fill="none" height="120" viewbox="0 0 120 120" width="120" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 60C10 60 20 40 40 40C60 40 60 80 80 80C100 80 110 60 110 60" stroke="#006667" stroke-linecap="round" stroke-width="12"></path>
+<path d="M10 80C10 80 20 60 40 60C60 60 60 100 80 100C100 100 110 80 110 80" stroke="#fbfb62" stroke-linecap="round" stroke-width="12"></path>
+</svg>
+</div>
+</body></html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&amp;family=Work+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-container": "#5f5f00",
+              "on-surface": "#2d2f2f",
+              "tertiary-fixed-dim": "#ecec55",
+              "on-primary-container": "#4a002c",
+              "tertiary-fixed": "#fbfb62",
+              "on-primary-fixed-variant": "#5b0037",
+              "surface-container-low": "#f0f1f1",
+              "surface": "#f6f6f6",
+              "surface-dim": "#d2d5d5",
+              "secondary-container": "#5ef8f8",
+              "on-tertiary": "#fafa61",
+              "surface-variant": "#dbdddd",
+              "on-tertiary-fixed-variant": "#6a6a00",
+              "surface-tint": "#aa1e6d",
+              "outline-variant": "#acadad",
+              "on-primary": "#ffeff3",
+              "primary-fixed-dim": "#f25ca7",
+              "tertiary": "#5f5f00",
+              "primary": "#aa1e6d",
+              "inverse-primary": "#ff66b2",
+              "surface-container-highest": "#dbdddd",
+              "on-secondary-fixed-variant": "#006667",
+              "error": "#b41340",
+              "on-error-container": "#510017",
+              "secondary-fixed-dim": "#4beaea",
+              "secondary-dim": "#005959",
+              "primary-dim": "#9a0a61",
+              "outline": "#757777",
+              "on-surface-variant": "#5a5c5c",
+              "surface-bright": "#f6f6f6",
+              "error-dim": "#a70138",
+              "on-background": "#2d2f2f",
+              "error-container": "#f74b6d",
+              "surface-container-high": "#e1e3e3",
+              "primary-container": "#ff6cb4",
+              "tertiary-container": "#fbfb62",
+              "on-primary-fixed": "#000000",
+              "inverse-surface": "#0c0f0f",
+              "on-tertiary-fixed": "#4c4c00",
+              "on-secondary": "#bbfffe",
+              "secondary-fixed": "#5ef8f8",
+              "tertiary-dim": "#525200",
+              "primary-fixed": "#ff6cb4",
+              "on-error": "#ffefef",
+              "inverse-on-surface": "#9c9d9d",
+              "background": "#f6f6f6",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-fixed": "#004747",
+              "surface-container": "#e7e8e8",
+              "on-secondary-container": "#005c5c",
+              "secondary": "#006667"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Work Sans"],
+              "label": ["Work Sans"]
+            },
+            borderRadius: {"DEFAULT": "0rem", "lg": "0rem", "xl": "0rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neographic-pattern {
+            background-image: radial-gradient(#2d2f2f 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .squiggle-bg {
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='12' viewBox='0 0 40 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 6c5 0 5-4 10-4s5 4 10 4 5-4 10-4 5 4 10 4' fill='none' stroke='%23aa1e6d' stroke-width='2'/%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface min-h-screen overflow-x-hidden selection:bg-tertiary-container selection:text-on-tertiary-container">
+<nav class="bg-[#f6f6f6] dark:bg-slate-900 border-b-[3px] border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex justify-between items-center w-full px-6 py-4 sticky top-0 z-50">
+<div class="text-3xl font-black text-[#aa1e6d] dark:text-[#ff6cb4] italic font-['Space_Grotesk'] uppercase tracking-[-2px]">
+            PARTY RIOT
+        </div>
+<div class="hidden md:flex gap-8 items-center">
+<span class="font-['Space_Grotesk'] uppercase tracking-[-2px] font-black text-black dark:text-white hover:skew-x-[-2deg] hover:bg-[#fbfb62] transition-transform px-2">ROUND 05/10</span>
+<span class="font-['Space_Grotesk'] uppercase tracking-[-2px] font-black text-[#006667] dark:text-[#5ef8f8] border-b-4 border-[#5ef8f8] hover:skew-x-[-2deg] hover:bg-[#fbfb62] transition-transform px-2">VOTE NOW</span>
+</div>
+<div class="flex gap-4">
+<button class="material-symbols-outlined text-2xl text-[#aa1e6d] dark:text-[#ff6cb4] active:translate-x-[2px] active:translate-y-[2px]" data-icon="leaderboard">leaderboard</button>
+<button class="material-symbols-outlined text-2xl text-[#aa1e6d] dark:text-[#ff6cb4] active:translate-x-[2px] active:translate-y-[2px]" data-icon="settings">settings</button>
+</div>
+</nav>
+<main class="relative px-4 py-8 md:px-12 max-w-7xl mx-auto neographic-pattern min-h-screen">
+<div class="mb-12 relative">
+<div class="absolute -top-4 -left-4 w-12 h-12 bg-secondary rotate-12 border-[3px] border-black z-0"></div>
+<div class="bg-tertiary-container border-[4px] border-black p-6 md:p-10 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] relative z-10 rotate-[-1deg]">
+<div class="font-headline font-black text-xs md:text-sm uppercase tracking-widest bg-black text-white px-3 py-1 inline-block mb-4">THE PROMPT</div>
+<h1 class="font-headline font-black text-2xl md:text-5xl uppercase leading-tight tracking-tight">
+                    Finish this sentence: The most awkward thing to say on a <span class="text-primary italic">first date</span> is...
+                </h1>
+</div>
+<div class="absolute -bottom-6 -right-2 w-24 h-24 bg-primary opacity-20 squiggle-bg z-0"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-32">
+<div class="bg-surface-container-lowest border-[3px] border-black p-6 shadow-[6px_6px_0px_0px_rgba(170,30,109,1)] flex flex-col justify-between min-h-[280px] rotate-[1deg] group hover:scale-[1.02] transition-transform">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 border-[3px] border-black bg-secondary-fixed-dim flex items-center justify-center">
+<span class="material-symbols-outlined text-black font-bold" data-icon="person">person</span>
+</div>
+<div class="font-headline font-extrabold text-sm border-2 border-black px-2 py-0.5">PLAYER 01</div>
+</div>
+<p class="font-body font-bold text-xl md:text-2xl leading-snug">"My mom said I'm very handsome."</p>
+<div class="mt-8">
+<button class="w-full bg-primary border-[3px] border-black py-4 font-headline font-black text-xl text-on-primary shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] transition-all flex items-center justify-center gap-2 group-hover:bg-primary-container group-hover:text-black">
+                        VOTE <span class="material-symbols-outlined" data-icon="bolt" data-weight="fill" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</button>
+</div>
+</div>
+<div class="bg-surface-container-lowest border-[3px] border-black p-6 shadow-[6px_6px_0px_0px_rgba(0,102,103,1)] flex flex-col justify-between min-h-[280px] rotate-[-1deg] group hover:scale-[1.02] transition-transform">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 border-[3px] border-black bg-primary-fixed-dim flex items-center justify-center">
+<span class="material-symbols-outlined text-black font-bold" data-icon="face">face</span>
+</div>
+<div class="font-headline font-extrabold text-sm border-2 border-black px-2 py-0.5">PLAYER 02</div>
+</div>
+<p class="font-body font-bold text-xl md:text-2xl leading-snug">"Is this your first time in a basement?"</p>
+<div class="mt-8">
+<button class="w-full bg-secondary border-[3px] border-black py-4 font-headline font-black text-xl text-on-secondary shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] transition-all flex items-center justify-center gap-2 group-hover:bg-secondary-container group-hover:text-black">
+                        VOTE <span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+</div>
+</div>
+<div class="bg-surface-container-lowest border-[3px] border-black p-6 shadow-[6px_6px_0px_0px_rgba(251,251,98,1)] flex flex-col justify-between min-h-[280px] rotate-[0.5deg] group hover:scale-[1.02] transition-transform">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 border-[3px] border-black bg-tertiary-fixed-dim flex items-center justify-center">
+<span class="material-symbols-outlined text-black font-bold" data-icon="mood">mood</span>
+</div>
+<div class="font-headline font-extrabold text-sm border-2 border-black px-2 py-0.5">PLAYER 03</div>
+</div>
+<p class="font-body font-bold text-xl md:text-2xl leading-snug">"I forgot my wallet, but I have coupons!"</p>
+<div class="mt-8">
+<button class="w-full bg-tertiary border-[3px] border-black py-4 font-headline font-black text-xl text-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] transition-all flex items-center justify-center gap-2 group-hover:bg-tertiary-container group-hover:text-black">
+                        VOTE <span class="material-symbols-outlined" data-icon="priority_high" data-weight="fill" style="font-variation-settings: 'FILL' 1;">priority_high</span>
+</button>
+</div>
+</div>
+<div class="bg-surface-container-lowest border-[3px] border-black p-6 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] flex flex-col justify-between min-h-[280px] rotate-[-2deg] group hover:scale-[1.02] transition-transform lg:col-start-1">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 border-[3px] border-black bg-on-tertiary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-white font-bold" data-icon="token">token</span>
+</div>
+<div class="font-headline font-extrabold text-sm border-2 border-black px-2 py-0.5">PLAYER 04</div>
+</div>
+<p class="font-body font-bold text-xl md:text-2xl leading-snug">"So... do you believe in ghosts, or are you normal?"</p>
+<div class="mt-8">
+<button class="w-full bg-black border-[3px] border-black py-4 font-headline font-black text-xl text-white shadow-[4px_4px_0px_0px_rgba(170,30,109,1)] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] transition-all flex items-center justify-center gap-2 group-hover:bg-primary group-hover:text-white">
+                        VOTE <span class="material-symbols-outlined" data-icon="favorite" data-weight="fill" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</div>
+</div>
+<div class="relative hidden lg:block overflow-hidden border-[3px] border-black h-full bg-secondary-container">
+<img alt="Abstract dynamic pattern" class="w-full h-full object-cover mix-blend-multiply opacity-30" data-alt="Abstract dynamic colorful pop art pattern" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYNwjC3PaUtRHdoZOtXrWHUygtEV3_aX8xwUvyfEQ0g3axSznS-GEq5ckVP1rYxKeeuTwBXdCq333JAcLK97rHaO4Ype0JRw9ApYTOGAVxkDye2q3dVfgGoNRPhbODITGyPilMXZNyi5ZgXTjwPuFmWd28ESnJX2SSb1k7_B8Y5luIFPEa4IXz6sYY6HkQXd19LgKgxyQveLCCEEpKMsSqKRvzvbGCrogAWxyTtMhzWCuMESWwlzUdABi5j8xHPvzgIKKMtyLmFz6u"/>
+<div class="absolute inset-0 flex items-center justify-center p-8">
+<div class="bg-white border-[4px] border-black p-4 rotate-12 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+<span class="font-headline font-black text-4xl uppercase tracking-tighter">HURRY!</span>
+<div class="mt-2 text-primary font-black text-5xl italic">0:14</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest border-[3px] border-black p-6 shadow-[6px_6px_0px_0px_rgba(94,248,248,1)] flex flex-col justify-between min-h-[280px] rotate-[2deg] group hover:scale-[1.02] transition-transform">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 border-[3px] border-black bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-white font-bold" data-icon="psychology">psychology</span>
+</div>
+<div class="font-headline font-extrabold text-sm border-2 border-black px-2 py-0.5">PLAYER 05</div>
+</div>
+<p class="font-body font-bold text-xl md:text-2xl leading-snug">"I've actually already planned our wedding venue."</p>
+<div class="mt-8">
+<button class="w-full bg-primary-container border-[3px] border-black py-4 font-headline font-black text-xl text-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] transition-all flex items-center justify-center gap-2 group-hover:bg-primary group-hover:text-white">
+                        VOTE <span class="material-symbols-outlined" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<footer class="fixed bottom-0 left-0 w-full h-20 bg-[#006667] dark:bg-[#004445] border-t-[3px] border-black z-50 flex justify-around items-center px-4 shadow-[0px_-4px_0px_0px_rgba(0,0,0,1)]">
+<button class="flex flex-col items-center justify-center bg-[#fbfb62] text-black border-[3px] border-black -mt-4 mb-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-2 min-w-[80px] hover:bg-[#ff6cb4] hover:text-white transition-colors active:scale-95">
+<span class="material-symbols-outlined" data-icon="how_to_vote">how_to_vote</span>
+<span class="font-['Work_Sans'] font-bold uppercase text-[10px] md:text-[12px]">VOTE</span>
+</button>
+<button class="flex flex-col items-center justify-center text-white p-2 min-w-[80px] hover:bg-[#ff6cb4] hover:text-white transition-colors active:scale-95">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span class="font-['Work_Sans'] font-bold uppercase text-[10px] md:text-[12px]">PLAYERS</span>
+</button>
+<button class="flex flex-col items-center justify-center text-white p-2 min-w-[80px] hover:bg-[#ff6cb4] hover:text-white transition-colors active:scale-95">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+<span class="font-['Work_Sans'] font-bold uppercase text-[10px] md:text-[12px]">CHAT</span>
+</button>
+<button class="flex flex-col items-center justify-center text-white p-2 min-w-[80px] hover:bg-[#ff6cb4] hover:text-white transition-colors active:scale-95">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-['Work_Sans'] font-bold uppercase text-[10px] md:text-[12px]">EXIT</span>
+</button>
+</footer>
+</body></html>

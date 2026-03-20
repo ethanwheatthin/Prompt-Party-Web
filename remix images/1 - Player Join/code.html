@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PROMPT PARTY - Join Game</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Work+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed": "#004747",
+              "surface-dim": "#d2d5d5",
+              "on-primary-fixed": "#000000",
+              "inverse-primary": "#ff66b2",
+              "primary-container": "#ff6cb4",
+              "error-container": "#f74b6d",
+              "on-tertiary-container": "#5f5f00",
+              "secondary-fixed": "#5ef8f8",
+              "on-background": "#2d2f2f",
+              "surface-container": "#e7e8e8",
+              "surface-container-high": "#e1e3e3",
+              "on-error-container": "#510017",
+              "on-tertiary-fixed": "#4c4c00",
+              "on-primary": "#ffeff3",
+              "error": "#b41340",
+              "secondary-fixed-dim": "#4beaea",
+              "on-secondary": "#bbfffe",
+              "error-dim": "#a70138",
+              "primary": "#aa1e6d",
+              "tertiary-dim": "#525200",
+              "outline-variant": "#acadad",
+              "tertiary-container": "#fbfb62",
+              "secondary-container": "#5ef8f8",
+              "surface-variant": "#dbdddd",
+              "surface-container-lowest": "#ffffff",
+              "on-surface": "#2d2f2f",
+              "on-primary-fixed-variant": "#5b0037",
+              "primary-dim": "#9a0a61",
+              "outline": "#757777",
+              "on-error": "#ffefef",
+              "tertiary": "#5f5f00",
+              "inverse-surface": "#0c0f0f",
+              "primary-fixed": "#ff6cb4",
+              "primary-fixed-dim": "#f25ca7",
+              "on-primary-container": "#4a002c",
+              "surface-bright": "#f6f6f6",
+              "surface-container-low": "#f0f1f1",
+              "on-tertiary": "#fafa61",
+              "surface-tint": "#aa1e6d",
+              "background": "#f6f6f6",
+              "tertiary-fixed": "#fbfb62",
+              "secondary-dim": "#005959",
+              "tertiary-fixed-dim": "#ecec55",
+              "inverse-on-surface": "#9c9d9d",
+              "on-secondary-fixed-variant": "#006667",
+              "on-tertiary-fixed-variant": "#6a6a00",
+              "secondary": "#006667",
+              "surface": "#f6f6f6",
+              "on-secondary-container": "#005c5c",
+              "on-surface-variant": "#5a5c5c",
+              "surface-container-highest": "#dbdddd"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Work Sans"],
+              "label": ["Work Sans"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neobrutal-shadow {
+            box-shadow: 8px 8px 0px 0px rgba(0,0,0,1);
+        }
+        .neobrutal-shadow-sm {
+            box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+        }
+        .rotate-neg-1 { transform: rotate(-1deg); }
+        .rotate-pos-1 { transform: rotate(1.5deg); }
+        input:focus { outline: none; }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface min-h-screen selection:bg-tertiary-fixed selection:text-black">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full border-b-[3px] border-black bg-cyan-500 z-50 flex justify-between items-center px-6 h-20 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+<div class="text-3xl font-black italic tracking-tighter text-black font-['Space_Grotesk'] uppercase">
+            PROMPT PARTY
+        </div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-['Space_Grotesk'] uppercase tracking-tighter font-black text-black/80 hover:skew-x-1 hover:translate-y-[-2px] transition-transform" href="#">Games</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-tighter font-black text-black/80 hover:skew-x-1 hover:translate-y-[-2px] transition-transform" href="#">Leaderboard</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-tighter font-black text-black/80 hover:skew-x-1 hover:translate-y-[-2px] transition-transform" href="#">Host</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-black text-3xl hover:scale-110 transition-transform">celebration</button>
+<button class="material-symbols-outlined text-black text-3xl hover:scale-110 transition-transform">settings</button>
+<div class="w-10 h-10 border-2 border-black bg-primary-container overflow-hidden">
+<img alt="User avatar with a neon pink border" class="w-full h-full object-cover" data-alt="Stylized user avatar with neon pink geometric accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBz-cqsDvdNw7UpTvcBJ2Tynb_pIDlxJWOnKCSq0lhL8y0Ve0sI-1BQCnPoErIAq_Tvn5dF0uZXDIzkGH-8O9KYqm9JT3w3OsMPEDgTgVOVgGIc1VFEBVC7sQT25xkTTasIH28Sc6X4_vZ9lDezMM7FgzapA7j-ONmC4xM2YI5mABqh51HCXv2wuNZnHgzyR7P4uZmY48Hy3pLl6Yliu1QqcAVCGc0i_JVoCYJNxtWfUefAgvhj_4zSNGFh1hvMg9ptfvRK7cjwJEeF"/>
+</div>
+</div>
+</header>
+<main class="relative pt-32 pb-24 px-4 flex flex-col items-center justify-center min-h-screen overflow-hidden">
+<!-- Abstract Background Elements -->
+<div class="absolute top-40 left-10 w-32 h-32 border-[3px] border-black bg-secondary rotate-12 -z-10 opacity-20"></div>
+<div class="absolute bottom-20 right-10 w-48 h-48 rounded-full border-[3px] border-black bg-primary rotate-neg-1 -z-10 opacity-10"></div>
+<div class="absolute top-1/2 left-1/4 text-8xl font-black text-tertiary opacity-5 select-none font-headline">REMIX</div>
+<div class="absolute top-1/3 right-1/4 text-8xl font-black text-primary opacity-5 select-none font-headline">PARTY</div>
+<!-- Central Join Card -->
+<div class="relative z-10 w-full max-w-xl bg-surface-container-lowest border-[3px] border-black neobrutal-shadow p-8 md:p-12 rotate-neg-1">
+<div class="mb-12 text-center md:text-left">
+<h1 class="font-headline text-5xl md:text-7xl font-black tracking-tighter text-black mb-2 uppercase">
+                    READY TO PLAY?
+                </h1>
+<p class="font-body text-lg font-bold text-on-surface-variant">Enter the chaos below.</p>
+</div>
+<form class="space-y-8">
+<!-- Input Group 1 -->
+<div class="space-y-2">
+<label class="font-headline font-black text-xl uppercase tracking-tight flex items-center gap-2">
+<span class="material-symbols-outlined">key</span>
+                        ROOM CODE
+                    </label>
+<input class="w-full h-16 px-6 text-3xl font-black font-headline border-[3px] border-black placeholder:text-surface-variant focus:bg-tertiary-fixed focus:translate-x-1 focus:translate-y-1 transition-all uppercase tracking-widest" maxlength="4" placeholder="ABCD" type="text"/>
+</div>
+<!-- Input Group 2 -->
+<div class="space-y-2">
+<label class="font-headline font-black text-xl uppercase tracking-tight flex items-center gap-2">
+<span class="material-symbols-outlined">face</span>
+                        PLAYER NAME
+                    </label>
+<input class="w-full h-16 px-6 text-xl font-bold font-body border-[3px] border-black placeholder:text-surface-variant focus:bg-tertiary-fixed focus:translate-x-1 focus:translate-y-1 transition-all" placeholder="Enter nickname..." type="text"/>
+</div>
+<!-- Main Action Button -->
+<div class="pt-4">
+<button class="group relative w-full bg-tertiary-fixed h-20 border-[3px] border-black transition-all hover:-translate-x-1 hover:-translate-y-1 active:translate-x-0 active:translate-y-0" type="submit">
+<div class="absolute inset-0 bg-black translate-x-2 translate-y-2 -z-10 group-active:translate-x-0 group-active:translate-y-0 transition-all"></div>
+<span class="font-headline font-black text-3xl text-black uppercase tracking-tighter flex items-center justify-center gap-4">
+                            JOIN GAME
+                            <span class="material-symbols-outlined text-4xl">rocket_launch</span>
+</span>
+</button>
+</div>
+</form>
+<!-- Decorative Elements on Card -->
+<div class="absolute -top-6 -right-6 w-12 h-12 bg-primary border-[3px] border-black rotate-12 flex items-center justify-center">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<div class="absolute -bottom-4 -left-4 w-20 h-8 bg-secondary border-[3px] border-black -rotate-12 flex items-center justify-center font-headline font-black text-xs text-white">
+                LIVE NOW
+            </div>
+</div>
+<!-- Secondary Links / Helper -->
+<div class="mt-12 flex flex-col md:flex-row gap-6 text-center">
+<button class="font-headline font-black text-black hover:text-primary transition-colors uppercase border-b-2 border-transparent hover:border-primary">
+                Hosting a room?
+            </button>
+<span class="hidden md:block text-outline">|</span>
+<button class="font-headline font-black text-black hover:text-secondary transition-colors uppercase border-b-2 border-transparent hover:border-secondary">
+                Need Help?
+            </button>
+</div>
+</main>
+<!-- SideNavBar (Hidden on Mobile) -->
+<aside class="hidden lg:flex fixed left-0 top-20 h-[calc(100vh-80px)] w-64 border-r-[3px] border-black bg-zinc-50 flex-col py-8 px-4 z-40">
+<div class="mb-10 flex items-center gap-3">
+<div class="w-12 h-12 bg-primary-container border-2 border-black flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+<span class="material-symbols-outlined text-black text-3xl">theaters</span>
+</div>
+<div>
+<h3 class="text-xl font-black text-black font-headline">REMIX MENU</h3>
+<p class="text-xs font-bold text-zinc-600 font-body">Let's get weird</p>
+</div>
+</div>
+<nav class="flex flex-col gap-4">
+<a class="flex items-center gap-4 p-3 font-['Space_Grotesk'] font-bold text-zinc-600 hover:bg-cyan-400 hover:text-black hover:translate-x-1 transition-all" href="#">
+<span class="material-symbols-outlined">home</span>
+                Home
+            </a>
+<a class="flex items-center gap-4 p-3 font-['Space_Grotesk'] font-bold bg-yellow-400 text-black border-2 border-black -rotate-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all" href="#">
+<span class="material-symbols-outlined">reorder</span>
+                New Remix
+            </a>
+<a class="flex items-center gap-4 p-3 font-['Space_Grotesk'] font-bold text-zinc-600 hover:bg-cyan-400 hover:text-black hover:translate-x-1 transition-all" href="#">
+<span class="material-symbols-outlined">edit_note</span>
+                My Prompts
+            </a>
+<a class="flex items-center gap-4 p-3 font-['Space_Grotesk'] font-bold text-zinc-600 hover:bg-cyan-400 hover:text-black hover:translate-x-1 transition-all" href="#">
+<span class="material-symbols-outlined">history</span>
+                Archive
+            </a>
+</nav>
+<div class="mt-auto pt-8">
+<button class="w-full py-4 bg-pink-500 text-white font-black font-headline border-[3px] border-black neobrutal-shadow-sm hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
+                GO WILD
+            </button>
+</div>
+</aside>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-safe bg-yellow-400 h-20 border-t-[3px] border-black" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBz-cqsDvdNw7UpTvcBJ2Tynb_pIDlxJWOnKCSq0lhL8y0Ve0sI-1BQCnPoErIAq_Tvn5dF0uZXDIzkGH-8O9KYqm9JT3w3OsMPEDgTgVOVgGIc1VFEBVC7sQT25xkTTasIH28Sc6X4_vZ9lDezMM7FgzapA7j-ONmC4xM2YI5mABqh51HCXv2wuNZnHgzyR7P4uZmY48Hy3pLl6Yliu1QqcAVCGc0i_JVoCYJNxtWfUefAgvhj_4zSNGFh1hvMg9ptfvRK7cjwJEeF');">
+<a class="flex flex-col items-center justify-center text-black p-2 hover:scale-110 transition-transform active:-translate-y-1" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-['Space_Grotesk'] text-xs font-black uppercase">Party</span>
+</a>
+<a class="flex flex-col items-center justify-center text-black p-2 hover:scale-110 transition-transform active:-translate-y-1" href="#">
+<span class="material-symbols-outlined">how_to_vote</span>
+<span class="font-['Space_Grotesk'] text-xs font-black uppercase">Vote</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-pink-50 text-black border-2 border-black rotate-2 p-2 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:scale-110 transition-transform active:-translate-y-1" href="#">
+<span class="material-symbols-outlined">sentiment_very_satisfied</span>
+<span class="font-['Space_Grotesk'] text-xs font-black uppercase">Laugh</span>
+</a>
+<a class="flex flex-col items-center justify-center text-black p-2 hover:scale-110 transition-transform active:-translate-y-1" href="#">
+<span class="material-symbols-outlined">face</span>
+<span class="font-['Space_Grotesk'] text-xs font-black uppercase">Me</span>
+</a>
+</nav>
+<!-- Decorative Corner Decals -->
+<div class="fixed top-24 left-4 -rotate-12 pointer-events-none hidden md:block">
+<div class="p-2 border-2 border-black bg-tertiary-fixed font-headline font-black text-xs uppercase shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+            #NO_FILTER
+        </div>
+</div>
+<div class="fixed top-32 right-8 rotate-6 pointer-events-none hidden md:block">
+<div class="p-2 border-2 border-black bg-secondary-fixed font-headline font-black text-xs uppercase shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+            HIGH ENERGY
+        </div>
+</div>
+</body></html>

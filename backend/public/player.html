@@ -3,88 +3,353 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PromptParty - Join</title>
+  <title>Prompt Party - Join</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    html,body{height:100%;margin:0;font-family:system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial}
-    body{display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#667eea,#764ba2);padding:20px}
-    .card{background:linear-gradient(180deg,rgba(255,255,255,0.95),rgba(255,255,255,0.9));width:100%;max-width:420px;border-radius:12px;padding:20px;box-shadow:0 10px 30px rgba(0,0,0,0.2)}
-    h1{margin:0 0 12px;font-size:20px;text-align:center}
-    label{display:block;margin-top:8px;font-size:13px;color:#333}
-    input[type=text]{width:100%;padding:12px 10px;margin-top:6px;border-radius:8px;border:1px solid #ddd;font-size:16px;box-sizing:border-box}
-    .muted{font-size:12px;color:#666;margin-top:6px}
-    button{width:100%;margin-top:16px;padding:12px;border-radius:10px;border:0;background:#5a67d8;color:white;font-weight:600;font-size:16px}
-    .error{color:#b00020;background:#fff0f2;padding:8px;border-radius:8px;margin-top:12px}
-    .success{color:#064e3b;background:#ecfdf5;padding:8px;border-radius:8px;margin-top:12px}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%;font-family:'Space Grotesk',sans-serif}
+    body{
+      display:flex;flex-direction:column;align-items:center;
+      background-color:#f6f6f6;
+      background-image:radial-gradient(#e5e5e5 1px,transparent 1px);
+      background-size:20px 20px;
+      padding:0;
+    }
+
+    /* Top bar */
+    .topbar{
+      width:100%;background:#fff;border-bottom:3px solid #000;
+      padding:12px 20px;text-align:center;flex-shrink:0;
+    }
+    .topbar h1{
+      font-weight:900;font-style:italic;text-transform:uppercase;
+      letter-spacing:-0.05em;color:#ff66b2;font-size:22px;margin:0;
+    }
+
+    /* Main content area */
+    .main{
+      flex:1;display:flex;align-items:center;justify-content:center;
+      padding:20px;width:100%;overflow-y:auto;
+    }
+
+    /* Sticker card */
+    .card{
+      background:#fff;border:3px solid #000;
+      box-shadow:8px 8px 0 0 rgba(0,0,0,1);
+      width:100%;max-width:420px;padding:0;
+      position:relative;
+    }
+    .card-header{
+      background:#fbfb62;border-bottom:3px solid #000;
+      padding:14px 20px;
+    }
+    .card-header h2{
+      font-weight:900;font-style:italic;text-transform:uppercase;
+      font-size:20px;letter-spacing:-0.03em;
+    }
+    .card-body{padding:20px}
+
+    /* Labels */
+    label{
+      display:block;font-weight:900;text-transform:uppercase;
+      font-size:11px;letter-spacing:0.05em;margin-bottom:4px;color:#000;
+    }
+
+    /* Inputs - stark, bold */
+    input[type=text]{
+      width:100%;background:#fff;border:3px solid #000;
+      padding:12px;font-family:'Space Grotesk',sans-serif;
+      font-weight:700;font-size:16px;margin-bottom:14px;
+      outline:none;
+    }
+    input[type=text]:focus{
+      box-shadow:0 0 0 4px rgba(94,248,248,0.3);
+    }
+    input[type=text]::placeholder{color:#aaa}
+
+    /* Muted helper text */
+    .muted{font-size:12px;color:#666;font-weight:700;margin-top:4px;margin-bottom:8px}
+
+    /* Primary button - tactile press-down */
+    .btn{
+      display:block;width:100%;padding:14px;
+      border:3px solid #000;font-family:'Space Grotesk',sans-serif;
+      font-weight:900;text-transform:uppercase;letter-spacing:-0.03em;
+      font-size:18px;cursor:pointer;position:relative;
+      transition:all 75ms ease;
+    }
+    .btn-primary{
+      background:#fbfb62;color:#000;
+      box-shadow:4px 4px 0 0 rgba(0,0,0,1);
+    }
+    .btn-primary:hover{
+      transform:translate(-2px,-2px);
+      box-shadow:6px 6px 0 0 rgba(0,0,0,1);
+    }
+    .btn-primary:active,.btn-primary:disabled{
+      transform:translate(0,0);box-shadow:none;
+    }
+    .btn-primary:disabled{opacity:0.5;cursor:not-allowed}
+
+    .btn-pink{
+      background:#ff66b2;color:#000;
+      box-shadow:4px 4px 0 0 rgba(0,0,0,1);
+    }
+    .btn-pink:hover{
+      transform:translate(-2px,-2px);
+      box-shadow:6px 6px 0 0 rgba(0,0,0,1);
+    }
+    .btn-pink:active{transform:translate(0,0);box-shadow:none}
+
+    .btn-green{
+      background:#16a34a;color:#fff;
+      box-shadow:4px 4px 0 0 rgba(0,0,0,1);
+    }
+    .btn-green:hover{
+      transform:translate(-2px,-2px);
+      box-shadow:6px 6px 0 0 rgba(0,0,0,1);
+    }
+    .btn-green:active{transform:translate(0,0);box-shadow:none}
+
+    /* Messages */
+    .error{
+      background:#fff0f2;border:3px solid #000;color:#b00020;
+      padding:10px 14px;font-weight:700;font-size:14px;margin-top:12px;
+    }
+    .success{
+      background:#5ef8f8;border:3px solid #000;color:#000;
+      padding:10px 14px;font-weight:700;font-size:14px;margin-top:12px;
+    }
+
+    /* Player list */
     ul{list-style:none;padding:0;margin:10px 0}
-    li{padding:8px;border-radius:8px;background:#f7f7fb;margin-bottom:8px;display:flex;align-items:center}
-    .dot{width:10px;height:10px;border-radius:50%;margin-right:8px}
+    li{
+      padding:10px 14px;background:#fff;border:3px solid #000;
+      margin-bottom:6px;display:flex;align-items:center;
+      font-weight:700;font-size:14px;text-transform:uppercase;
+      box-shadow:3px 3px 0 0 rgba(0,0,0,1);
+    }
+    .dot{width:10px;height:10px;border-radius:50%;margin-right:10px;border:2px solid #000}
     .dot.online{background:#16a34a}
     .dot.offline{background:#9ca3af}
-    .small{font-size:13px;color:#444}
+    .small{font-size:13px;color:#000}
     .center{text-align:center}
+
+    /* Badge / tag */
+    .badge{
+      display:inline-block;border:3px solid #000;padding:4px 12px;
+      font-weight:900;text-transform:uppercase;font-size:11px;
+      letter-spacing:0.03em;
+    }
+    .badge-teal{background:#5ef8f8}
+    .badge-pink{background:#ff66b2}
+    .badge-yellow{background:#fbfb62}
+
+    /* Topic display */
+    .topic-text{
+      font-weight:900;font-style:italic;text-transform:uppercase;
+      letter-spacing:-0.05em;font-size:22px;color:#000;
+      line-height:1.2;margin:12px 0;
+    }
+
+    /* Timer */
+    .timer-box{
+      display:inline-block;background:#5ef8f8;border:3px solid #000;
+      padding:8px 20px;box-shadow:4px 4px 0 0 rgba(0,0,0,1);
+      margin:10px 0;
+    }
+    .timer-box.urgent{background:#ff66b2;animation:pulse 1.5s ease-in-out infinite}
+    .timer-text{
+      font-weight:900;font-style:italic;font-size:32px;color:#000;
+    }
+
+    /* Actor banner */
+    .actor-banner{
+      background:#fbfb62;border:3px solid #000;padding:14px;
+      font-weight:900;text-transform:uppercase;font-size:16px;
+      text-align:center;margin:12px 0;
+      box-shadow:4px 4px 0 0 rgba(0,0,0,1);
+    }
+
+    /* Prompt input area */
+    .prompt-area textarea{
+      width:100%;background:#fff;border:3px solid #000;
+      padding:14px;font-family:'Space Grotesk',sans-serif;
+      font-weight:700;font-size:16px;min-height:80px;resize:vertical;
+      outline:none;
+    }
+    .prompt-area textarea:focus{
+      box-shadow:0 0 0 4px rgba(94,248,248,0.3);
+    }
+    .prompt-area textarea::placeholder{color:#aaa}
+
+    /* Voting prompt cards */
+    .vote-card{
+      background:#fff;border:3px solid #000;padding:16px;
+      margin-bottom:10px;cursor:pointer;
+      box-shadow:4px 4px 0 0 rgba(0,0,0,1);
+      transition:all 75ms ease;
+    }
+    .vote-card:hover{
+      transform:translate(-2px,-2px);
+      box-shadow:6px 6px 0 0 rgba(0,0,0,1);
+    }
+    .vote-card:active{
+      transform:translate(0,0);box-shadow:none;
+    }
+    .vote-card.selected{
+      background:#5ef8f8;border-color:#000;
+    }
+    .vote-card.disabled{
+      opacity:0.4;cursor:not-allowed;
+    }
+    .vote-card.disabled:hover{
+      transform:none;box-shadow:4px 4px 0 0 rgba(0,0,0,1);
+    }
+    .vote-card-text{font-weight:700;font-size:16px;margin-bottom:6px}
+    .vote-card-author{font-weight:700;font-size:12px;color:#666;text-transform:uppercase}
+
+    /* Voting timer */
+    .voting-timer{
+      text-align:center;font-weight:900;font-style:italic;
+      font-size:36px;color:#000;margin-bottom:16px;
+    }
+
+    /* Selected prompt / results */
+    .result-sticker{
+      background:#fff;border:3px solid #000;
+      box-shadow:8px 8px 0 0 rgba(0,0,0,1);
+      padding:20px;text-align:center;
+    }
+    .result-prompt{
+      font-weight:900;font-style:italic;font-size:20px;
+      padding:16px;background:#fbfb62;border:3px solid #000;
+      margin:14px 0;
+    }
+    .result-author{font-weight:700;font-size:15px;color:#333;margin-bottom:8px}
+    .result-actor{
+      font-weight:900;text-transform:uppercase;font-size:13px;
+      color:#ff66b2;
+    }
+    .result-winner{
+      display:inline-block;background:#16a34a;color:#fff;
+      border:3px solid #000;padding:6px 16px;
+      font-weight:900;text-transform:uppercase;font-size:14px;
+      margin-top:10px;box-shadow:3px 3px 0 0 rgba(0,0,0,1);
+    }
+
+    /* Splash screen */
     .splash-screen{
       position:fixed;top:0;left:0;right:0;bottom:0;
-      background:linear-gradient(135deg,#16a34a,#059669);
+      background:#fbfb62;border:none;
       display:flex;align-items:center;justify-content:center;
-      z-index:1000;animation:splashFadeIn 0.5s ease-out;
+      z-index:1000;animation:splashFadeIn 0.4s ease-out;
     }
     @keyframes splashFadeIn{from{opacity:0;transform:scale(0.9)}to{opacity:1;transform:scale(1)}}
-    .splash-content{text-align:center;color:white;padding:40px}
-    .splash-title{font-size:48px;font-weight:700;margin-bottom:20px;text-shadow:0 4px 8px rgba(0,0,0,0.3);animation:pulse 2s ease-in-out infinite}
+    .splash-content{text-align:center;padding:40px}
+    .splash-title{
+      font-weight:900;font-style:italic;text-transform:uppercase;
+      font-size:42px;letter-spacing:-0.05em;color:#000;
+      margin-bottom:16px;animation:pulse 2s ease-in-out infinite;
+    }
+    .splash-subtitle{
+      font-weight:900;font-size:22px;text-transform:uppercase;color:#ff66b2;
+    }
     @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
-    .splash-subtitle{font-size:24px;opacity:0.9}
+
+    /* Decorative shapes */
+    .deco{position:absolute;z-index:-1}
   </style>
 </head>
 <body>
-  <div class="card" role="main">
-    <h1>Join PromptParty</h1>
-    <div id="formArea">
-      <label for="joinCode">Room Code</label>
-      <input id="joinCode" type="text" maxlength="10" inputmode="text" autocomplete="off" placeholder="ABC123" />
-      <label for="name">Player Name</label>
-      <input id="name" type="text" maxlength="20" autocomplete="name" placeholder="Your name" />
-      <div class="muted">Enter the room code shown on the host's screen.</div>
-      <button id="joinBtn">Join Game</button>
-      <div id="message"></div>
-    </div>
+  <!-- Top bar -->
+  <div class="topbar">
+    <h1>Prompt Party</h1>
+  </div>
 
-    <div id="lobbyArea" style="display:none">
-      <div class="center small">Connected to room <span id="roomCodeText"></span></div>
-      <div id="playersListContainer" style="margin-top:12px">
-        <ul id="playersList"></ul>
-      </div>
-      <div id="lobbyMessage" class="muted"></div>
-    </div>
-
-    <div id="roundArea" style="display:none">
-      <div class="center">
-        <h2 style="margin:10px 0">Round Topic</h2>
-        <div id="topicDisplay" style="font-size:18px;font-weight:600;margin:15px 0;color:#5a67d8"></div>
-        <div id="timerDisplay" style="font-size:24px;font-weight:700;margin:10px 0">1:30</div>
-        <div id="actorBanner" style="display:none;background:#fbbf24;padding:12px;border-radius:8px;margin:10px 0;font-weight:600">
-          You are the actor!
+  <div class="main">
+    <div class="card" role="main">
+      <!-- JOIN FORM -->
+      <div id="formArea">
+        <div class="card-header">
+          <h2>Ready to Play?</h2>
+        </div>
+        <div class="card-body">
+          <p class="muted" style="margin-bottom:14px">Enter the chaos below.</p>
+          <label for="joinCode">Room Code</label>
+          <input id="joinCode" type="text" maxlength="10" inputmode="text" autocomplete="off" placeholder="ABCD" />
+          <label for="name">Player Name</label>
+          <input id="name" type="text" maxlength="20" autocomplete="name" placeholder="Your name" />
+          <div class="muted">Enter the room code shown on the host's screen.</div>
+          <button id="joinBtn" class="btn btn-primary">JOIN GAME</button>
+          <div id="message"></div>
         </div>
       </div>
-      <div id="promptForm" style="margin-top:20px">
-        <label for="promptInput">Your Prompt</label>
-        <input id="promptInput" type="text" maxlength="100" placeholder="Enter your creative prompt..." />
-        <button id="submitPromptBtn">Submit Prompt</button>
-      </div>
-      <div id="promptMessage"></div>
 
-      <div id="votingArea" style="display:none;margin-top:20px">
-        <h3 style="text-align:center;margin-bottom:15px">Vote for the Best Prompt!</h3>
-        <div id="votingTimer" style="text-align:center;font-size:32px;font-weight:700;color:#5a67d8;margin-bottom:20px">1:00</div>
-        <div id="promptsList"></div>
-        <div id="votingMessage"></div>
+      <!-- LOBBY -->
+      <div id="lobbyArea" style="display:none">
+        <div class="card-header" style="background:#5ef8f8">
+          <h2>YOU'RE IN!</h2>
+        </div>
+        <div class="card-body">
+          <div class="center">
+            <span class="badge badge-yellow" id="roomCodeText" style="font-size:16px;padding:6px 16px"></span>
+          </div>
+          <div style="margin-top:14px">
+            <div style="font-weight:900;text-transform:uppercase;font-size:12px;margin-bottom:8px">Party Goers</div>
+            <ul id="playersList"></ul>
+          </div>
+          <div id="lobbyMessage" class="muted" style="text-align:center;margin-top:10px"></div>
+        </div>
       </div>
 
-      <div id="selectedPromptArea" style="display:none;margin-top:20px;text-align:center">
-        <h3 style="color:#16a34a;margin-bottom:10px">Winning Prompt!</h3>
-        <div id="resultsTopic" style="font-size:14px;color:#666;margin-bottom:15px"></div>
-        <div id="selectedPromptText" style="font-size:18px;font-weight:600;padding:20px;background:#ecfdf5;border-radius:8px;margin:15px 0;border:2px solid #16a34a"></div>
-        <div id="selectedPromptAuthor" style="color:#666;font-size:16px;margin-bottom:10px"></div>
-        <div id="resultsActor" style="font-size:14px;color:#5a67d8;font-weight:600"></div>
+      <!-- ROUND AREA -->
+      <div id="roundArea" style="display:none">
+        <div class="card-header">
+          <h2>Round Topic</h2>
+        </div>
+        <div class="card-body">
+          <div class="center">
+            <div id="topicDisplay" class="topic-text"></div>
+            <div class="timer-box" id="timerBox">
+              <div class="timer-text" id="timerDisplay">1:30</div>
+            </div>
+            <div id="actorBanner" class="actor-banner" style="display:none">
+              You are the actor!
+            </div>
+          </div>
+
+          <!-- Prompt submission -->
+          <div id="promptForm" class="prompt-area" style="margin-top:16px">
+            <label for="promptInput">Type Your Weirdest Answer...</label>
+            <input id="promptInput" type="text" maxlength="100" placeholder="TYPE YOUR WEIRDEST ANSWER..." />
+            <button id="submitPromptBtn" class="btn btn-pink" style="margin-top:10px">SEND IT!</button>
+          </div>
+          <div id="promptMessage"></div>
+
+          <!-- Voting -->
+          <div id="votingArea" style="display:none;margin-top:16px">
+            <div style="text-align:center;margin-bottom:12px">
+              <span class="badge badge-teal" style="font-size:14px;padding:6px 16px">VOTE NOW</span>
+            </div>
+            <div class="voting-timer" id="votingTimer">1:00</div>
+            <div id="promptsList"></div>
+            <div id="votingMessage"></div>
+          </div>
+
+          <!-- Results -->
+          <div id="selectedPromptArea" style="display:none;margin-top:16px">
+            <div class="result-sticker">
+              <span class="badge badge-teal" style="margin-bottom:12px;display:inline-block">WINNING PROMPT</span>
+              <div id="resultsTopic" class="muted" style="margin-top:10px"></div>
+              <div id="selectedPromptText" class="result-prompt"></div>
+              <div id="selectedPromptAuthor" class="result-author"></div>
+              <div id="resultsActor" class="result-actor"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -103,6 +368,7 @@
       const lobbyMessage = document.getElementById('lobbyMessage');
       const topicDisplay = document.getElementById('topicDisplay');
       const timerDisplay = document.getElementById('timerDisplay');
+      const timerBox = document.getElementById('timerBox');
       const actorBanner = document.getElementById('actorBanner');
       const promptForm = document.getElementById('promptForm');
       const promptInput = document.getElementById('promptInput');
@@ -164,17 +430,17 @@
         if(!name){ setMessage('Please enter your name', 'error'); return; }
 
         joinBtn.disabled = true;
-        joinBtn.textContent = 'Joining...';
+        joinBtn.textContent = 'JOINING...';
 
         try{
           const res = await fetch('/join', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({ joinCode, name }) });
-          if(res.status === 404){ setMessage('Room not found', 'error'); joinBtn.disabled = false; joinBtn.textContent = 'Join Game'; return; }
-          if(res.status === 400){ const body = await res.json(); setMessage(body.error || 'Bad request', 'error'); joinBtn.disabled = false; joinBtn.textContent = 'Join Game'; return; }
-          if(!res.ok){ setMessage('Network error', 'error'); joinBtn.disabled = false; joinBtn.textContent = 'Join Game'; return; }
+          if(res.status === 404){ setMessage('Room not found', 'error'); joinBtn.disabled = false; joinBtn.textContent = 'JOIN GAME'; return; }
+          if(res.status === 400){ const body = await res.json(); setMessage(body.error || 'Bad request', 'error'); joinBtn.disabled = false; joinBtn.textContent = 'JOIN GAME'; return; }
+          if(!res.ok){ setMessage('Network error', 'error'); joinBtn.disabled = false; joinBtn.textContent = 'JOIN GAME'; return; }
           const data = await res.json();
           token = data.token;
           playerId = data.playerId;
-          setMessage('Joined room, connecting websocket...');
+          setMessage('Joined room, connecting...', 'success');
           openWebSocket();
           roomCodeText.textContent = data.joinCode || data.roomId;
           formArea.style.display = 'none';
@@ -183,7 +449,7 @@
           setMessage('Network error while joining', 'error');
         }finally{
           joinBtn.disabled = false;
-          joinBtn.textContent = 'Join Game';
+          joinBtn.textContent = 'JOIN GAME';
         }
       }
 
@@ -194,7 +460,7 @@
         ws = new WebSocket(host.replace(/^http/, 'ws') + '/ws');
 
         ws.onopen = () => {
-          setMessage('Connected, sending auth...');
+          setMessage('Connected, authenticating...', 'success');
           ws.send(JSON.stringify({ type: 'auth', payload: { token } }));
         };
 
@@ -202,10 +468,10 @@
           try{
             const msg = JSON.parse(ev.data);
             if(msg.type === 'auth_ok'){
-              setMessage('Auth OK', 'success');
+              setMessage('');
               const roomState = msg.payload.roomState;
               updatePlayers(roomState);
-              lobbyMessage.textContent = 'Lobby - waiting for host';
+              lobbyMessage.textContent = 'Waiting for the host to start the chaos...';
             } else if(msg.type === 'room_state'){
               updatePlayers(msg.payload);
             } else if(msg.type === 'auth_error'){
@@ -214,16 +480,16 @@
               handleRoundStarted(msg.payload);
             } else if(msg.type === 'prompt_accepted'){
               submitPromptBtn.disabled = true;
-              submitPromptBtn.textContent = 'Submitted!';
+              submitPromptBtn.textContent = 'SUBMITTED!';
               promptInput.disabled = true;
-              setPromptMessage('Prompt submitted successfully! Waiting for others...', 'success');
+              setPromptMessage('Prompt submitted! Waiting for others...', 'success');
             } else if(msg.type === 'prompts_update'){
               // Could show prompt count here
             } else if(msg.type === 'voting_started'){
               showSplashScreen(msg.payload);
             } else if(msg.type === 'vote_accepted'){
               hasVoted = true;
-              setVotingMessage('Vote submitted! Waiting for others...', 'success');
+              setVotingMessage('Vote locked in! Waiting for others...', 'success');
             } else if(msg.type === 'vote_update'){
               // Could update vote counts in real-time
             } else if(msg.type === 'prompt_selected'){
@@ -231,14 +497,14 @@
             } else if(msg.type === 'error'){
               setPromptMessage(msg.payload?.error || 'Server error', 'error');
               submitPromptBtn.disabled = false;
-              submitPromptBtn.textContent = 'Submit Prompt';
+              submitPromptBtn.textContent = 'SEND IT!';
             }
           }catch(e){}
         };
 
         ws.onclose = () => {
           lobbyMessage.textContent = 'Disconnected from server';
-          Array.from(playersList.children).forEach(li=>{ const dot = li.querySelector('.dot'); dot.classList.remove('online'); dot.classList.add('offline'); });
+          Array.from(playersList.children).forEach(li=>{ const dot = li.querySelector('.dot'); if(dot){dot.classList.remove('online'); dot.classList.add('offline');} });
         };
 
         ws.onerror = (e) => {
@@ -256,7 +522,8 @@
           dot.className = 'dot online';
           li.appendChild(dot);
           const span = document.createElement('div');
-          span.innerHTML = '<div class="small">'+escapeHtml(p.name || p.id)+'</div>';
+          span.className = 'small';
+          span.textContent = p.name || p.id;
           li.appendChild(span);
           playersList.appendChild(li);
         });
@@ -279,7 +546,7 @@
           actorBanner.style.display = 'none';
           promptForm.style.display = '';
           submitPromptBtn.disabled = false;
-          submitPromptBtn.textContent = 'Submit Prompt';
+          submitPromptBtn.textContent = 'SEND IT!';
           promptInput.disabled = false;
           promptInput.value = '';
         }
@@ -291,7 +558,7 @@
         currentRound = roundData;
         const splash = document.createElement('div');
         splash.className = 'splash-screen';
-        splash.innerHTML = '<div class="splash-content"><div class="splash-title">All Prompts Submitted!</div><div class="splash-subtitle">Get ready to vote...</div></div>';
+        splash.innerHTML = '<div class="splash-content"><div class="splash-title">ALL PROMPTS IN!</div><div class="splash-subtitle">Get ready to vote...</div></div>';
         document.body.appendChild(splash);
         setTimeout(() => {
           splash.style.opacity = '0';
@@ -307,7 +574,7 @@
         promptForm.style.display = 'none';
         if(roundData.actorId === playerId){
           actorBanner.style.display = '';
-          actorBanner.textContent = 'You are the actor! Players are voting...';
+          actorBanner.textContent = 'YOU ARE THE ACTOR! PLAYERS ARE VOTING...';
           votingArea.style.display = 'none';
           return;
         }
@@ -318,26 +585,27 @@
         const prompts = roundData.prompts || [];
         prompts.forEach(prompt => {
           const promptCard = document.createElement('div');
-          promptCard.style.cssText = 'background:#f7f7fb;padding:15px;border-radius:8px;margin-bottom:10px;cursor:pointer;border:2px solid transparent;transition:all 0.2s';
+          promptCard.className = 'vote-card';
+
           const promptText = document.createElement('div');
-          promptText.style.cssText = 'font-size:16px;font-weight:600;margin-bottom:5px';
-          promptText.textContent = prompt.text;
+          promptText.className = 'vote-card-text';
+          promptText.textContent = '"' + prompt.text + '"';
+
           const authorText = document.createElement('div');
-          authorText.style.cssText = 'font-size:12px;color:#666';
-          authorText.textContent = 'by ' + prompt.playerName;
+          authorText.className = 'vote-card-author';
+          authorText.textContent = 'by ' + escapeHtml(prompt.playerName);
+
           promptCard.appendChild(promptText);
           promptCard.appendChild(authorText);
+
           if(prompt.playerId === playerId){
-            promptCard.style.opacity = '0.5';
-            promptCard.style.cursor = 'not-allowed';
-            authorText.textContent = 'by You (cannot vote for own)';
+            promptCard.classList.add('disabled');
+            authorText.textContent = 'BY YOU (CANNOT VOTE FOR OWN)';
           } else {
             promptCard.addEventListener('click', ()=>{
               if(hasVoted) return;
               voteForPrompt(prompt.playerId, promptCard);
             });
-            promptCard.addEventListener('mouseenter', ()=>{ if(!hasVoted) promptCard.style.borderColor = '#5a67d8'; });
-            promptCard.addEventListener('mouseleave', ()=>{ promptCard.style.borderColor = 'transparent'; });
           }
           promptsList.appendChild(promptCard);
         });
@@ -350,7 +618,7 @@
           const timeRemaining = votingEndTime - now;
           if(timeRemaining <= 0){
             votingTimer.textContent = '0:00';
-            votingTimer.style.color = '#dc2626';
+            votingTimer.style.color = '#ff66b2';
             clearInterval(votingTimerInterval);
             return;
           }
@@ -358,9 +626,8 @@
           const minutes = Math.floor(seconds / 60);
           const secs = seconds % 60;
           votingTimer.textContent = minutes+':'+secs.toString().padStart(2, '0');
-          if(timeRemaining <= 10000) votingTimer.style.color = '#dc2626';
-          else if(timeRemaining <= 30000) votingTimer.style.color = '#f59e0b';
-          else votingTimer.style.color = '#5a67d8';
+          if(timeRemaining <= 10000) votingTimer.style.color = '#ff66b2';
+          else votingTimer.style.color = '#000';
         }, 100);
       }
 
@@ -368,9 +635,12 @@
         if(hasVoted) return;
         if(ws && ws.readyState === WebSocket.OPEN){
           ws.send(JSON.stringify({ type: 'submit_vote', payload: { promptPlayerId } }));
-          cardElement.style.borderColor = '#16a34a';
-          cardElement.style.backgroundColor = '#ecfdf5';
-          setVotingMessage('Submitting vote...', 'success');
+          cardElement.classList.add('selected');
+          // Disable all other cards
+          document.querySelectorAll('.vote-card').forEach(c => {
+            if(c !== cardElement) { c.classList.add('disabled'); }
+          });
+          setVotingMessage('Vote locked in!', 'success');
         }
       }
 
@@ -392,10 +662,13 @@
         const topic = data.topic || currentRound?.topic || 'Unknown Topic';
         resultsTopic.textContent = 'Topic: "' + topic + '"';
         selectedPromptText.textContent = '"' + data.promptText + '"';
-        selectedPromptAuthor.textContent = 'by ' + data.playerName + ' - ' + data.votes + ' vote' + (data.votes !== 1 ? 's' : '');
-        resultsActor.textContent = 'Actor: ' + actorName;
+        selectedPromptAuthor.textContent = 'by ' + data.playerName + ' \u2022 ' + data.votes + ' vote' + (data.votes !== 1 ? 's' : '');
+        resultsActor.textContent = 'ACTOR: ' + actorName;
         if(data.promptPlayerId === playerId){
-          selectedPromptAuthor.innerHTML += '<br><strong style="color:#16a34a">Your prompt won!</strong>';
+          const winBadge = document.createElement('div');
+          winBadge.className = 'result-winner';
+          winBadge.textContent = 'YOUR PROMPT WON!';
+          selectedPromptAuthor.after(winBadge);
         }
       }
 
@@ -415,6 +688,7 @@
           const timeRemaining = maxEndAt - now;
           if(timeRemaining <= 0){
             timerDisplay.textContent = '0:00';
+            timerBox.classList.add('urgent');
             clearInterval(timerInterval);
             return;
           }
@@ -422,6 +696,8 @@
           const minutes = Math.floor(seconds / 60);
           const secs = seconds % 60;
           timerDisplay.textContent = minutes+':'+secs.toString().padStart(2, '0');
+          if(timeRemaining <= 10000) timerBox.classList.add('urgent');
+          else timerBox.classList.remove('urgent');
         }, 100);
       }
 
@@ -431,7 +707,7 @@
         if(ws && ws.readyState === WebSocket.OPEN){
           ws.send(JSON.stringify({ type: 'submit_prompt', payload: { prompt } }));
           submitPromptBtn.disabled = true;
-          submitPromptBtn.textContent = 'Sending...';
+          submitPromptBtn.textContent = 'SENDING...';
         } else {
           setPromptMessage('Not connected to server', 'error');
         }

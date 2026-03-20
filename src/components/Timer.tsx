@@ -12,14 +12,18 @@ export function Timer({ endTime, label, className = '' }: TimerProps) {
 
   return (
     <div className={`text-center ${className}`}>
-      {label && <div className="text-lg text-white/60 mb-1">{label}</div>}
+      {label && (
+        <div className="font-black uppercase text-xs tracking-wide text-black/50 mb-1">{label}</div>
+      )}
       <div
-        className={`font-display font-bold transition-colors duration-300 ${
-          urgent ? 'text-red-400 animate-pulse-slow' : 'text-white'
-        }`}
-        style={{ fontSize: 'clamp(3rem, 6vw, 5rem)' }}
+        className={`${urgent ? 'bg-[#ff66b2] animate-pulse-slow' : 'bg-[#5ef8f8]'} border-[3px] border-black px-6 py-3 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] inline-block transition-colors duration-300`}
       >
-        {formatted}
+        <div
+          className="font-black italic text-black"
+          style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}
+        >
+          {formatted}
+        </div>
       </div>
     </div>
   );

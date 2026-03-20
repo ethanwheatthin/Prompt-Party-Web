@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&amp;family=Work+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-container": "#ff6cb4",
+              "primary-fixed": "#ff6cb4",
+              "on-error-container": "#510017",
+              "error-dim": "#a70138",
+              "secondary-fixed-dim": "#4beaea",
+              "surface-dim": "#d2d5d5",
+              "surface-bright": "#f6f6f6",
+              "on-secondary-container": "#005c5c",
+              "surface-variant": "#dbdddd",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-high": "#e1e3e3",
+              "surface-tint": "#aa1e6d",
+              "on-tertiary-container": "#5f5f00",
+              "secondary": "#006667",
+              "on-primary": "#ffeff3",
+              "on-primary-fixed-variant": "#5b0037",
+              "tertiary-fixed-dim": "#ecec55",
+              "surface-container-low": "#f0f1f1",
+              "secondary-container": "#5ef8f8",
+              "tertiary-container": "#fbfb62",
+              "secondary-dim": "#005959",
+              "inverse-on-surface": "#9c9d9d",
+              "surface-container-highest": "#dbdddd",
+              "primary": "#aa1e6d",
+              "on-tertiary-fixed-variant": "#6a6a00",
+              "primary-fixed-dim": "#f25ca7",
+              "on-secondary": "#bbfffe",
+              "secondary-fixed": "#5ef8f8",
+              "primary-dim": "#9a0a61",
+              "on-surface-variant": "#5a5c5c",
+              "error": "#b41340",
+              "surface-container": "#e7e8e8",
+              "on-primary-fixed": "#000000",
+              "tertiary-dim": "#525200",
+              "on-surface": "#2d2f2f",
+              "error-container": "#f74b6d",
+              "outline": "#757777",
+              "on-error": "#ffefef",
+              "on-tertiary-fixed": "#4c4c00",
+              "tertiary": "#5f5f00",
+              "inverse-primary": "#ff66b2",
+              "on-secondary-fixed-variant": "#006667",
+              "on-primary-container": "#4a002c",
+              "background": "#f6f6f6",
+              "on-background": "#2d2f2f",
+              "tertiary-fixed": "#fbfb62",
+              "on-tertiary": "#fafa61",
+              "outline-variant": "#acadad",
+              "inverse-surface": "#0c0f0f",
+              "surface": "#f6f6f6",
+              "on-secondary-fixed": "#004747"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Work Sans"],
+              "label": ["Work Sans"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .bg-pattern {
+            background-color: #f6f6f6;
+            background-image: radial-gradient(#dbdddd 2px, transparent 2px);
+            background-size: 24px 24px;
+        }
+        .squiggle-bg {
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10 Q 12.5 0 25 10 T 50 10 T 75 10 T 100 10' stroke='%23ff6cb4' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+            background-repeat: repeat-x;
+        }
+    </style>
+</head>
+<body class="bg-pattern font-body text-on-background min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full border-b-[3px] border-black bg-[#f6f6f6] dark:bg-zinc-900 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex justify-between items-center px-6 h-20 w-full z-50">
+<div class="flex items-center gap-4">
+<span class="text-3xl font-black text-[#ff6cb4] italic font-headline uppercase tracking-[-2px]">PROMPT PARTY</span>
+</div>
+<div class="flex gap-4">
+<button class="material-symbols-outlined text-black dark:text-white text-2xl hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform active:translate-x-[0px] active:translate-y-[0px]" data-icon="leaderboard">leaderboard</button>
+<button class="material-symbols-outlined text-black dark:text-white text-2xl hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform active:translate-x-[0px] active:translate-y-[0px]" data-icon="settings">settings</button>
+</div>
+</header>
+<main class="flex-grow pt-28 pb-32 px-4 md:px-12 max-w-7xl mx-auto w-full">
+<!-- Results Header Section -->
+<div class="text-center mb-12">
+<h1 class="font-headline font-black text-6xl md:text-8xl uppercase tracking-[-4px] text-primary rotate-[-1deg] inline-block bg-tertiary-container border-[3px] border-black px-8 py-2 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                PARTY RESULTS
+            </h1>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Podium / Winner Section -->
+<div class="lg:col-span-7 flex flex-col items-center">
+<div class="relative w-full max-w-lg">
+<!-- Winner Sticker -->
+<div class="absolute -top-10 -left-6 z-20 bg-secondary-container border-[3px] border-black p-4 rotate-[-12deg] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+<span class="font-headline font-black text-2xl uppercase">WINNER!</span>
+</div>
+<!-- Main Winner Card -->
+<div class="bg-white border-[3px] border-black p-8 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] relative z-10 flex flex-col items-center text-center">
+<div class="w-32 h-32 border-[3px] border-black bg-tertiary mb-6 overflow-hidden">
+<img alt="Chaosbringer Avatar" class="w-full h-full object-cover" data-alt="Chunky colorful illustrated avatar for Chaosbringer99" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCD4GV0NiKmNwniFENtqcbk5vWOXEruwTNtm8AYw6LRUVQCB8GOihZXaJ24LW7Vg0hc5xqVgwZP5mdl5Rv9dj2ju3oyxpHzOVBK3Zn1dlTTSNlEfktC5Jdo43Bhgo94-RJHGlQzca-G3fOLG-XSF8sP7q79YxAXaDjilmJtpexFswB0dE4XFXQolOCSlF8BFNxb7Q1u8qPfATaGNgZwsamTazJXCLEJ6QZINfyCjq786KkPwl7sKnaaq78ztu74QHPnNh-TgoJsTRV"/>
+</div>
+<h2 class="font-headline font-black text-4xl mb-2 text-black">CHAOSBRINGER99</h2>
+<div class="bg-primary-container border-[3px] border-black p-6 my-4 w-full rotate-[1deg]">
+<p class="font-headline text-2xl font-bold text-white italic">"My mom said I'm very handsome."</p>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<span class="material-symbols-outlined text-3xl text-tertiary-fixed" data-icon="stars" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="text-4xl font-black font-headline">2,450 PTS</span>
+</div>
+</div>
+<!-- Decorative Geometric Shapes -->
+<div class="absolute -bottom-6 -right-6 w-24 h-24 bg-tertiary-container border-[3px] border-black -z-10 rotate-12"></div>
+<div class="absolute top-1/2 -right-12 w-12 h-12 bg-secondary border-[3px] border-black rounded-full -z-10"></div>
+</div>
+<!-- Action Buttons (Sticker Style) -->
+<div class="flex flex-col sm:flex-row gap-6 mt-16 w-full max-w-lg">
+<button class="flex-1 bg-primary-container text-white border-[3px] border-black font-headline font-black text-2xl py-4 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-4px] hover:translate-y-[-4px] transition-transform active:translate-x-0 active:translate-y-0">
+                        PLAY AGAIN
+                    </button>
+<button class="flex-1 bg-white text-black border-[3px] border-black font-headline font-black text-2xl py-4 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-4px] hover:translate-y-[-4px] transition-transform active:translate-x-0 active:translate-y-0">
+                        BACK TO LOBBY
+                    </button>
+</div>
+</div>
+<!-- Secondary Leaderboard -->
+<div class="lg:col-span-5">
+<div class="bg-secondary-container border-[3px] border-black p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rotate-[1deg]">
+<h3 class="font-headline font-black text-3xl mb-6 border-b-[3px] border-black pb-2 flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="military_tech">military_tech</span>
+                        RANKINGS
+                    </h3>
+<div class="space-y-4">
+<!-- Rank 2 -->
+<div class="flex items-center justify-between bg-white border-[3px] border-black p-4 hover:bg-tertiary-container transition-colors group">
+<div class="flex items-center gap-4">
+<span class="font-headline font-black text-2xl w-8">2</span>
+<div class="w-12 h-12 border-[2px] border-black bg-primary">
+<img alt="Felix Avatar" class="w-full h-full" data-alt="Felix player profile picture sticker" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCD4GV0NiKmNwniFENtqcbk5vWOXEruwTNtm8AYw6LRUVQCB8GOihZXaJ24LW7Vg0hc5xqVgwZP5mdl5Rv9dj2ju3oyxpHzOVBK3Zn1dlTTSNlEfktC5Jdo43Bhgo94-RJHGlQzca-G3fOLG-XSF8sP7q79YxAXaDjilmJtpexFswB0dE4XFXQolOCSlF8BFNxb7Q1u8qPfATaGNgZwsamTazJXCLEJ6QZINfyCjq786KkPwl7sKnaaq78ztu74QHPnNh-TgoJsTRV"/>
+</div>
+<span class="font-headline font-bold text-xl">FELIX</span>
+</div>
+<span class="font-headline font-black text-xl">1,820</span>
+</div>
+<!-- Rank 3 -->
+<div class="flex items-center justify-between bg-white border-[3px] border-black p-4 hover:bg-tertiary-container transition-colors group rotate-[-1deg]">
+<div class="flex items-center gap-4">
+<span class="font-headline font-black text-2xl w-8">3</span>
+<div class="w-12 h-12 border-[2px] border-black bg-secondary">
+<img alt="Ziggy Avatar" class="w-full h-full" data-alt="Ziggy player profile picture sticker" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCD4GV0NiKmNwniFENtqcbk5vWOXEruwTNtm8AYw6LRUVQCB8GOihZXaJ24LW7Vg0hc5xqVgwZP5mdl5Rv9dj2ju3oyxpHzOVBK3Zn1dlTTSNlEfktC5Jdo43Bhgo94-RJHGlQzca-G3fOLG-XSF8sP7q79YxAXaDjilmJtpexFswB0dE4XFXQolOCSlF8BFNxb7Q1u8qPfATaGNgZwsamTazJXCLEJ6QZINfyCjq786KkPwl7sKnaaq78ztu74QHPnNh-TgoJsTRV"/>
+</div>
+<span class="font-headline font-bold text-xl">ZIGGY</span>
+</div>
+<span class="font-headline font-black text-xl">1,440</span>
+</div>
+<!-- Rank 4 -->
+<div class="flex items-center justify-between bg-white border-[3px] border-black p-4 hover:bg-tertiary-container transition-colors group">
+<div class="flex items-center gap-4">
+<span class="font-headline font-black text-2xl w-8">4</span>
+<div class="w-12 h-12 border-[2px] border-black bg-tertiary">
+<img alt="Momo Avatar" class="w-full h-full" data-alt="Momo player profile picture sticker" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCD4GV0NiKmNwniFENtqcbk5vWOXEruwTNtm8AYw6LRUVQCB8GOihZXaJ24LW7Vg0hc5xqVgwZP5mdl5Rv9dj2ju3oyxpHzOVBK3Zn1dlTTSNlEfktC5Jdo43Bhgo94-RJHGlQzca-G3fOLG-XSF8sP7q79YxAXaDjilmJtpexFswB0dE4XFXQolOCSlF8BFNxb7Q1u8qPfATaGNgZwsamTazJXCLEJ6QZINfyCjq786KkPwl7sKnaaq78ztu74QHPnNh-TgoJsTRV"/>
+</div>
+<span class="font-headline font-bold text-xl">MOMO</span>
+</div>
+<span class="font-headline font-black text-xl">980</span>
+</div>
+</div>
+<!-- Fun Sticker Overlay -->
+<div class="mt-8 bg-tertiary-container border-[3px] border-black p-4 text-center rotate-[2deg]">
+<p class="font-headline font-bold uppercase text-sm">Next game starts in 45s</p>
+</div>
+</div>
+<!-- Extra Decorative Element -->
+<div class="mt-8 flex justify-center">
+<div class="w-full h-8 squiggle-bg opacity-40"></div>
+</div>
+</div>
+</div>
+</main>
+<!-- SideNavBar (Hidden on Mobile) -->
+<aside class="hidden md:flex flex-col w-64 h-screen pt-24 p-4 fixed left-0 top-0 h-full border-r-[3px] border-black bg-[#fbfb62] dark:bg-yellow-400 z-40">
+<div class="mb-8 p-4 border-[3px] border-black bg-white">
+<span class="text-xl font-black text-black font-headline block uppercase">GAME MASTER</span>
+<span class="text-sm font-bold opacity-70">Level 99</span>
+</div>
+<nav class="flex flex-col gap-4">
+<a class="flex items-center gap-4 p-4 text-black font-bold uppercase font-headline hover:bg-[#5ef8f8] transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="videogame_asset">videogame_asset</span> Play
+            </a>
+<a class="flex items-center gap-4 p-4 bg-[#ff6cb4] text-white border-[3px] border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] font-headline font-bold uppercase scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="emoji_events">emoji_events</span> Leaderboard
+            </a>
+<a class="flex items-center gap-4 p-4 text-black font-bold uppercase font-headline hover:bg-[#5ef8f8] transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span> Store
+            </a>
+<a class="flex items-center gap-4 p-4 text-black font-bold uppercase font-headline hover:bg-[#5ef8f8] transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span> Profile
+            </a>
+</nav>
+<button class="mt-auto bg-black text-white p-4 font-headline font-black uppercase text-center border-[3px] border-black hover:bg-primary-container transition-colors">
+            NEW GAME
+        </button>
+</aside>
+<!-- BottomNavBar (Hidden on Desktop) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 md:hidden bg-[#5ef8f8] dark:bg-cyan-400 border-t-[3px] border-black">
+<div class="flex flex-col items-center justify-center text-black px-6 hover:bg-[#fbfb62]">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Work_Sans'] font-black uppercase text-[12px]">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-[#ff6cb4] text-white border-l-[3px] border-r-[3px] border-black h-full px-6 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="military_tech">military_tech</span>
+<span class="font-['Work_Sans'] font-black uppercase text-[12px]">Rankings</span>
+</div>
+<div class="flex flex-col items-center justify-center text-black px-6 hover:bg-[#fbfb62]">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span class="font-['Work_Sans'] font-black uppercase text-[12px]">Party</span>
+</div>
+</nav>
+</body></html>

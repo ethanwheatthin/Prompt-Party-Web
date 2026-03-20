@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;family=Work+Sans:wght@300..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed": "#fbfb62",
+              "on-secondary": "#bbfffe",
+              "secondary": "#006667",
+              "background": "#f6f6f6",
+              "outline-variant": "#acadad",
+              "tertiary-fixed-dim": "#ecec55",
+              "on-background": "#2d2f2f",
+              "secondary-container": "#5ef8f8",
+              "surface-bright": "#f6f6f6",
+              "on-primary": "#ffeff3",
+              "surface-tint": "#aa1e6d",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-high": "#e1e3e3",
+              "on-secondary-container": "#005c5c",
+              "tertiary-container": "#fbfb62",
+              "on-secondary-fixed-variant": "#006667",
+              "on-tertiary": "#fafa61",
+              "on-secondary-fixed": "#004747",
+              "on-error-container": "#510017",
+              "on-primary-fixed-variant": "#5b0037",
+              "on-primary-fixed": "#000000",
+              "secondary-fixed": "#5ef8f8",
+              "tertiary": "#5f5f00",
+              "surface": "#f6f6f6",
+              "on-surface-variant": "#5a5c5c",
+              "primary-fixed": "#ff6cb4",
+              "error": "#b41340",
+              "primary-dim": "#9a0a61",
+              "tertiary-dim": "#525200",
+              "surface-container-low": "#f0f1f1",
+              "on-surface": "#2d2f2f",
+              "surface-variant": "#dbdddd",
+              "surface-dim": "#d2d5d5",
+              "primary": "#aa1e6d",
+              "on-tertiary-fixed-variant": "#6a6a00",
+              "inverse-on-surface": "#9c9d9d",
+              "primary-container": "#ff6cb4",
+              "on-tertiary-fixed": "#4c4c00",
+              "on-tertiary-container": "#5f5f00",
+              "surface-container-highest": "#dbdddd",
+              "secondary-fixed-dim": "#4beaea",
+              "error-dim": "#a70138",
+              "inverse-surface": "#0c0f0f",
+              "secondary-dim": "#005959",
+              "error-container": "#f74b6d",
+              "surface-container": "#e7e8e8",
+              "on-primary-container": "#4a002c",
+              "on-error": "#ffefef",
+              "primary-fixed-dim": "#f25ca7",
+              "inverse-primary": "#ff66b2",
+              "outline": "#757777"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Work Sans"],
+              "label": ["Work Sans"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 700, 'GRAD' 0, 'opsz' 48;
+        }
+        .comic-bubble {
+            position: relative;
+            background: #5ef8f8;
+            border: 4px solid black;
+        }
+        .comic-bubble:after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50px;
+            border-width: 20px 20px 0;
+            border-style: solid;
+            border-color: black transparent;
+            display: block;
+            width: 0;
+        }
+        .comic-bubble:before {
+            content: '';
+            position: absolute;
+            bottom: -14px;
+            left: 52px;
+            border-width: 18px 18px 0;
+            border-style: solid;
+            border-color: #5ef8f8 transparent;
+            display: block;
+            width: 0;
+            z-index: 1;
+        }
+        .halftone-bg {
+            background-image: radial-gradient(black 15%, transparent 16%);
+            background-size: 12px 12px;
+            opacity: 0.1;
+        }
+    </style>
+</head>
+<body class="bg-tertiary-fixed font-body text-on-background min-h-screen overflow-x-hidden">
+<!-- Background Accents (Confetti) -->
+<div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+<div class="absolute top-10 left-10 w-24 h-24 border-[4px] border-black bg-secondary rotate-12 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]"></div>
+<div class="absolute top-1/4 right-[-20px] w-32 h-32 border-[4px] border-black bg-primary -rotate-6 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]"></div>
+<div class="absolute bottom-20 left-[-30px] w-40 h-12 border-[4px] border-black bg-secondary-container rotate-45 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full halftone-bg"></div>
+</div>
+<!-- TopNavBar -->
+<nav class="flex justify-between items-center px-6 h-20 w-full z-50 fixed top-0 w-full border-b-[3px] border-black bg-cyan-500 dark:bg-cyan-700 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+<div class="text-3xl font-black italic tracking-tighter text-black dark:text-white font-headline uppercase">
+            PROMPT PARTY
+        </div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-headline uppercase tracking-tighter font-black text-black/80 dark:text-white/80 hover:skew-x-1 hover:translate-y-[-2px] transition-transform" href="#">Games</a>
+<a class="font-headline uppercase tracking-tighter font-black text-black/80 dark:text-white/80 hover:skew-x-1 hover:translate-y-[-2px] transition-transform" href="#">Leaderboard</a>
+<a class="font-headline uppercase tracking-tighter font-black text-black/80 dark:text-white/80 hover:skew-x-1 hover:translate-y-[-2px] transition-transform" href="#">Host</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-black dark:text-white text-2xl hover:scale-110 transition-transform" data-icon="celebration">celebration</button>
+<button class="material-symbols-outlined text-black dark:text-white text-2xl hover:scale-110 transition-transform" data-icon="settings">settings</button>
+<div class="w-10 h-10 border-2 border-black bg-primary p-0.5">
+<img alt="User avatar" class="w-full h-full object-cover" data-alt="User avatar with a neon pink border" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsZaVthvXzyhDq2nLvJVf3uMhthG76SSkRF-B8UG-nkLxpTEktzekLhnj785W7RBezdYi1rcaxmDzINGcA0kEApJLTd_6gdPPyJaKXJufFKbyymfdmIg78PiVlfnpiE1Cr1WROisBsYEodc8WpRD3HX13CBCF9afVatpOTid7O9UqHGsrdTs8XrZzXJ9NYF9xDbDDayNMKPAL9HkpHvxlCp5Ten4L2LVhiskdHj_njIgT5tbuG4y4s07vRWQ7WM7ALhrauCmrydXTd"/>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="relative z-10 pt-32 pb-24 px-6 flex flex-col items-center justify-center min-h-screen">
+<!-- Large YOU'RE IN! Text -->
+<div class="mb-12 rotate-[-2deg] transition-transform">
+<div class="comic-bubble px-10 py-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+<h1 class="font-headline text-5xl md:text-8xl font-black text-black uppercase tracking-tighter leading-none">
+                    YOU'RE IN!
+                </h1>
+</div>
+</div>
+<!-- Central Character Avatar -->
+<div class="relative group mb-12">
+<!-- Background Glow/Sticker Effect -->
+<div class="absolute -inset-4 bg-secondary-container rotate-3 border-[4px] border-black z-0 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]"></div>
+<div class="relative z-10 w-48 h-48 md:w-64 md:h-64 border-[4px] border-black bg-surface-container-lowest overflow-hidden">
+<img alt="Player Character" class="w-full h-full object-cover scale-110 hover:scale-125 transition-transform" data-alt="Excited 3D character avatar with neon accessories" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsZaVthvXzyhDq2nLvJVf3uMhthG76SSkRF-B8UG-nkLxpTEktzekLhnj785W7RBezdYi1rcaxmDzINGcA0kEApJLTd_6gdPPyJaKXJufFKbyymfdmIg78PiVlfnpiE1Cr1WROisBsYEodc8WpRD3HX13CBCF9afVatpOTid7O9UqHGsrdTs8XrZzXJ9NYF9xDbDDayNMKPAL9HkpHvxlCp5Ten4L2LVhiskdHj_njIgT5tbuG4y4s07vRWQ7WM7ALhrauCmrydXTd"/>
+</div>
+<!-- Character Name Badge -->
+<div class="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-yellow-400 border-[3px] border-black px-4 py-1 rotate-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] z-20">
+<span class="font-headline font-black text-xl uppercase italic">ChaosBringer99</span>
+</div>
+</div>
+<!-- Status & Loading -->
+<div class="w-full max-w-xl text-center space-y-6">
+<div class="bg-black text-white py-3 px-6 inline-block -rotate-1 shadow-[4px_4px_0px_0px_rgba(255,108,180,1)]">
+<p class="font-headline text-lg md:text-2xl font-bold tracking-tight">
+                    Waiting for the host to start the chaos...
+                </p>
+</div>
+<!-- Chunky Loading Bar -->
+<div class="w-full h-12 border-[4px] border-black bg-white p-1 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] flex">
+<div class="h-full w-12 bg-primary border-r-[3px] border-black"></div>
+<div class="h-full w-12 bg-secondary border-r-[3px] border-black"></div>
+<div class="h-full w-12 bg-tertiary-fixed border-r-[3px] border-black"></div>
+<div class="h-full w-12 bg-secondary-container border-r-[3px] border-black"></div>
+<div class="h-full w-12 bg-primary border-r-[3px] border-black"></div>
+<div class="h-full w-12 bg-secondary border-r-[3px] border-black"></div>
+<div class="h-full w-12 bg-tertiary-fixed border-r-[3px] border-black opacity-40"></div>
+<div class="h-full flex-grow bg-transparent"></div>
+</div>
+<!-- Player Lobby Count -->
+<div class="flex justify-center gap-4 pt-4">
+<div class="flex flex-col items-center">
+<span class="font-headline font-black text-4xl">12/20</span>
+<span class="font-label uppercase font-bold text-xs bg-black text-white px-2">Players Joined</span>
+</div>
+</div>
+</div>
+</main>
+<!-- SideNavBar (Hidden on Mobile) -->
+<aside class="hidden lg:flex fixed left-0 top-20 flex-col h-[calc(100vh-80px)] py-8 px-4 w-64 border-r-[3px] border-black bg-zinc-50 dark:bg-zinc-900 z-40">
+<div class="mb-8">
+<h2 class="text-xl font-black text-black dark:text-white font-headline uppercase">REMIX MENU</h2>
+<p class="text-zinc-600 dark:text-zinc-400 font-label text-sm">Let's get weird</p>
+</div>
+<nav class="flex flex-col gap-4 flex-grow">
+<a class="flex items-center gap-3 p-3 bg-yellow-400 text-black border-2 border-black -rotate-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] font-headline font-bold hover:bg-cyan-400 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+                Home
+            </a>
+<a class="flex items-center gap-3 p-3 text-zinc-600 dark:text-zinc-400 font-headline font-bold hover:bg-cyan-400 hover:text-black hover:translate-x-1 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="reorder">reorder</span>
+                New Remix
+            </a>
+<a class="flex items-center gap-3 p-3 text-zinc-600 dark:text-zinc-400 font-headline font-bold hover:bg-cyan-400 hover:text-black hover:translate-x-1 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+                My Prompts
+            </a>
+<a class="flex items-center gap-3 p-3 text-zinc-600 dark:text-zinc-400 font-headline font-bold hover:bg-cyan-400 hover:text-black hover:translate-x-1 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+                Archive
+            </a>
+</nav>
+<button class="mt-auto w-full bg-pink-500 text-white font-headline font-black py-4 border-[3px] border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:scale-95 transition-all uppercase">
+            GO WILD
+        </button>
+</aside>
+<!-- BottomNavBar (Visible on Mobile) -->
+<footer class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-safe bg-yellow-400 dark:bg-yellow-500 border-t-[3px] border-black h-20 bg-[url('https://www.transparenttextures.com/patterns/p6.png')]">
+<a class="flex flex-col items-center justify-center bg-pink-500 text-white border-2 border-black rotate-2 p-2 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span class="font-headline text-[10px] font-black uppercase">Party</span>
+</a>
+<a class="flex flex-col items-center justify-center text-black p-2 hover:scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="how_to_vote">how_to_vote</span>
+<span class="font-headline text-[10px] font-black uppercase">Vote</span>
+</a>
+<a class="flex flex-col items-center justify-center text-black p-2 hover:scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="sentiment_very_satisfied">sentiment_very_satisfied</span>
+<span class="font-headline text-[10px] font-black uppercase">Laugh</span>
+</a>
+<a class="flex flex-col items-center justify-center text-black p-2 hover:scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="face">face</span>
+<span class="font-headline text-[10px] font-black uppercase">Me</span>
+</a>
+</footer>
+</body></html>

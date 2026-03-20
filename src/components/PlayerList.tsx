@@ -10,14 +10,14 @@ export function PlayerList({ players, highlightId, className = '' }: PlayerListP
   const nonHostPlayers = players.filter(p => !p.isHost);
 
   return (
-    <div className={`flex flex-wrap justify-center gap-4 ${className}`}>
+    <div className={`flex flex-wrap justify-center gap-3 ${className}`}>
       {nonHostPlayers.map(p => (
         <div
           key={p.id}
-          className={`px-6 py-3 rounded-xl text-xl font-display font-semibold transition-all duration-300 ${
+          className={`px-5 py-2 border-[3px] border-black font-black uppercase text-sm transition-all duration-300 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] ${
             p.id === highlightId
-              ? 'bg-accent-400 text-gray-900 scale-110'
-              : 'bg-white/10 text-white'
+              ? 'bg-[#fbfb62] text-black scale-110'
+              : 'bg-white text-black'
           }`}
         >
           {p.name}
