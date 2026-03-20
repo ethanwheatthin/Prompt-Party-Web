@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prompt Party - Lobby</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="player.css">
+</head>
+<body>
+  <div class="topbar">
+    <h1>Prompt Party</h1>
+  </div>
+
+  <div class="main">
+    <div class="card" role="main">
+      <div class="card-header" style="background:#5ef8f8">
+        <h2>YOU'RE IN!</h2>
+      </div>
+      <div class="card-body">
+        <div class="center">
+          <span class="badge badge-yellow" id="roomCodeText" style="font-size:16px;padding:6px 16px"></span>
+        </div>
+        <div style="margin-top:14px">
+          <div style="font-weight:900;text-transform:uppercase;font-size:12px;margin-bottom:8px">Party Goers</div>
+          <ul id="playersList"></ul>
+        </div>
+        <div id="lobbyMessage" class="muted" style="text-align:center;margin-top:10px"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="shared.js"></script>
+  <script src="lobby.js"></script>
+</body>
+</html>

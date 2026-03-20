@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prompt Party - Round</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="player.css">
+</head>
+<body>
+  <div class="topbar">
+    <h1>Prompt Party</h1>
+  </div>
+
+  <div class="main">
+    <div class="card" role="main">
+      <div class="card-header">
+        <h2>Round Topic</h2>
+      </div>
+      <div class="card-body">
+        <div class="center">
+          <div id="topicDisplay" class="topic-text"></div>
+          <div class="timer-box" id="timerBox">
+            <div class="timer-text" id="timerDisplay">1:30</div>
+          </div>
+          <div id="actorBanner" class="actor-banner" style="display:none">
+            You are the actor!
+          </div>
+        </div>
+
+        <!-- Prompt submission -->
+        <div id="promptForm" class="prompt-area" style="margin-top:16px">
+          <label for="promptInput">Type Your Weirdest Answer...</label>
+          <input id="promptInput" type="text" maxlength="100" placeholder="TYPE YOUR WEIRDEST ANSWER..." />
+          <button id="submitPromptBtn" class="btn btn-pink" style="margin-top:10px">SEND IT!</button>
+        </div>
+        <div id="promptMessage"></div>
+
+        <!-- Voting -->
+        <div id="votingArea" style="display:none;margin-top:16px">
+          <div style="text-align:center;margin-bottom:12px">
+            <span class="badge badge-teal" style="font-size:14px;padding:6px 16px">VOTE NOW</span>
+          </div>
+          <div class="voting-timer" id="votingTimer">1:00</div>
+          <div id="promptsList"></div>
+          <div id="votingMessage"></div>
+        </div>
+
+        <!-- Results -->
+        <div id="selectedPromptArea" style="display:none;margin-top:16px">
+          <div class="result-sticker">
+            <span class="badge badge-teal" style="margin-bottom:12px;display:inline-block">WINNING PROMPT</span>
+            <div id="resultsTopic" class="muted" style="margin-top:10px"></div>
+            <div id="selectedPromptText" class="result-prompt"></div>
+            <div id="selectedPromptAuthor" class="result-author"></div>
+            <div id="resultsActor" class="result-actor"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="shared.js"></script>
+  <script src="round.js"></script>
+</body>
+</html>

@@ -174,7 +174,7 @@ export function GameStateProvider({ children }: { children: ReactNode }) {
 
   // ── Score calculation ──
 
-  const updateScoresAfterRound = useCallback((winnerPlayerId: string) => {
+  const updateScoresAfterRound = useCallback((winnerPlayerId: string, actorId: string) => {
     const current = stateRef.current;
     const players = current.roomState?.players.filter(p => !p.isHost) ?? [];
     const prev = current.scores;
@@ -182,7 +182,9 @@ export function GameStateProvider({ children }: { children: ReactNode }) {
     const updated: PlayerScore[] = players.map(p => {
       const existing = prev.find(s => s.playerId === p.id);
       const oldScore = existing?.score ?? 0;
-      const delta = p.id === winnerPlayerId ? 100 : 0;
+      let delta = 0;
+      if (p.id === winnerPlayerId) delta += 50;
+      if (p.id === actorId) delta += 100;
       return { playerId: p.id, name: p.name, score: oldScore + delta, delta };
     });
 
@@ -249,7 +251,7 @@ export function GameStateProvider({ children }: { children: ReactNode }) {
       case 'prompt_selected': {
         clearPhaseTimer();
         dispatch({ type: 'PROMPT_SELECTED', payload: msg.payload });
-        updateScoresAfterRound(msg.payload.promptPlayerId);
+        updateScoresAfterRound(msg.payload.promptPlayerId, msg.payload.actorId);
 
         // Performance phase timer -> leaderboard
         phaseTimerRef.current = setTimeout(() => {
